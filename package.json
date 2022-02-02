@@ -1,0 +1,24 @@
+{
+  "name": "dev.f1yingbanana.sfizz-unity",
+  "version": "0.1.0",
+  "displayName": "Sfizz for Unity",
+  "description": "A Unity3D MIDI player with instruments defined in sfz format, using sfizz as the underlying sampler.",
+  "unity": "2019.1",
+  "unityRelease": "0b5",
+  "documentationUrl": "https://github.com/f1yingbanana/sfizz-unity",
+  "changelogUrl": "https://github.com/f1yingbanana/sfizz-unity",
+  "licensesUrl": "https://github.com/f1yingbanana/sfizz-unity/blob/main/LICENSE",
+  "keywords": [
+    "sfz",
+    "sfizz",
+    "sampler",
+    "MIDI",
+    "synthesizer",
+    "music",
+    "audio"
+  ],
+  "author": {
+    "name": "f1yingbanana",
+    "url": "https://flyblog.antigear.dev"
+  }
+}
