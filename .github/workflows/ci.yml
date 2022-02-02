@@ -25,4 +25,4 @@ jobs:
         fi
         git push -f -u origin upm
       env:
-        PKG_ROOT: Packages/Sfizz for Unity
+        PKG_ROOT: Packages/sfizz-unity
