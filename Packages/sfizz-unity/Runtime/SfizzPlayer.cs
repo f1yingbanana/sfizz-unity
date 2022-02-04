@@ -46,19 +46,6 @@ namespace F1yingBanana.SfizzUnity {
     /// </summary>
     private const int Channels = 2;
 
-    /// <summary>
-    /// For some unknown reason, the audio clip must be bigger than the buffer for playback to work.
-    /// Suspected reason is that there might be some overhead with how <see cref="AudioSource"/>
-    /// handles loopback. This prevents us from caching the interleaved array. When we are always
-    /// overwriting the entire audio clip, artifacts begin to appear at 7, and sound is completely
-    /// gone at 5.
-    ///
-    /// If AudioClip supports writing only a segment of an array in <see
-    /// cref="AudioClip.SetData(float[], int)"/>, then we can cache the interleaved array and reduce
-    /// this multiplier.
-    /// </summary>
-    private const int AudioClipSizeMultiplier = 10;
-
     private AudioClip audioClip;
 
     private AudioSource audioSource;
@@ -122,19 +109,33 @@ namespace F1yingBanana.SfizzUnity {
       Interleave(buffer, interleavedBuffer, samples);
       audioClip.SetData(interleavedBuffer, audioOffset);
 
-      // Occasionally the playback may lag behind what we rendered. We can't adjust this every frame
-      // as the frames don't line up with Update and we get an audio version of the screendoor
-      // effect. Instead, we interpolate if it gets too behind.
-      float latency = 1000f * (audioOffset - audioSource.timeSamples) / SampleRate;
+      // Occasionally the playback may lag behind or get in front of what we rendered. We can't
+      // adjust this every frame as the frames don't line up with Update and we get an audio version
+      // of the screendoor effect. Instead, we interpolate if it gets too out of sync.
+      float latency = audioOffset - audioSource.timeSamples;
 
-      if (latency > LatencyThreshold) {
-        audioSource.timeSamples = audioOffset;
+      if (latency < 0) {
+        // We might be on two ends of the loop. Perform extra checks.
+        float wrapAroundLatency = bufferSize - audioSource.timeSamples + audioOffset;
+
+        if (-latency > wrapAroundLatency) {
+          // The wrapped around value is the true latency since the audio clip size >> latency.
+          latency = wrapAroundLatency;
+        }
+
+        // Otherwise the latency is actually negative, which may happen if audio continues to play
+        // when update is paused.
       }
 
+      float latencyMs = 1000f * latency / SampleRate;
+
+      if (latencyMs > LatencyThreshold || latencyMs < 0) {
+        audioSource.timeSamples = audioOffset;
+      }
 #if DEBUG_VERBOSE
-      Debug.Log($"{name} updated {samples} frames. dt={dt} dt_err={dtError} latency={latency}ms");
+      Debug.Log($"{name} updated {samples} frames. dt={dt} dt_err={dtError} latency={latencyMs}ms");
 #endif
-      audioOffset = (audioOffset + samples) % (AudioClipSizeMultiplier * bufferSize);
+      audioOffset = (audioOffset + samples) % bufferSize;
     }
 
     /// <summary>
@@ -171,8 +172,7 @@ namespace F1yingBanana.SfizzUnity {
         Destroy(audioClip);
       }
 
-      audioClip = AudioClip.Create("stream", AudioClipSizeMultiplier * bufferSize, Channels,
-                                   SampleRate, false);
+      audioClip = AudioClip.Create("stream", bufferSize, Channels, SampleRate, false);
       audioSource.clip = audioClip;
       audioSource.loop = true;
       audioSource.Play();
