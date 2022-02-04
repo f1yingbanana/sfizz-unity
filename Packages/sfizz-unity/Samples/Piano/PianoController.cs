@@ -1,4 +1,7 @@
 using System.IO;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,24 +19,31 @@ namespace F1yingBanana.SfizzUnity.Piano {
       get; set;
     } = 64;
 
-    /// <summary>
-    /// The SFZ path, relative to the project path, e.g. Assets/StreamingAssets/Piano.sfz. Note that
-    /// this path will NOT work outside the Unity editor, due to how Unity removes directory
-    /// structure of assets in builds. In your own code, put your files in Assets/StreamingAssets
-    /// and use <see cref="Application.streamingAssetsPath"/> instead. For Android, WebGL and
-    /// downloaded assets, extract the files into <see cref="Application.persistentDataPath"/>
-    /// first.
-    /// </summary>
     [field:SerializeField]
-    public string InitialSfzPath;
+    public Object InitialSfzFile {
+      get; set;
+    }
 
     private void Start() {
-      string path = Path.GetFullPath(
-          Path.Combine(Path.GetDirectoryName(Application.dataPath), InitialSfzPath));
+      if (!Application.isEditor) {
+        Debug.LogError(
+            "PianoController does not work in standalone builds, see the class for more info.");
+        return;
+      }
+
+#if UNITY_EDITOR
+      // Note that this will NOT work outside the Unity editor, due to how Unity removes directory
+      // structure of assets in builds, even if we are saving the path instead of getting it
+      // dynamically with AssetDatabase. In your own code, put your sfz files, e.g. piano.sfz, in
+      // Assets/StreamingAssets/piano.sfz and use Application.streamingAssetsPath/piano.sfz instead.
+      // For downloaded assets, extract the files into Application.persistentDataPath first.
+      string path = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(Application.dataPath),
+                                                  AssetDatabase.GetAssetPath(InitialSfzFile)));
 
       if (!Player.Sfizz.LoadFile(path)) {
         Debug.LogWarning($"Sfz not found at the given path: {path}, player will remain silent.");
       }
+#endif
     }
 
     private void Update() {

@@ -637,7 +637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Player>k__BackingField: {fileID: 1178896607}
   <Velocity>k__BackingField: 64
-  InitialSfzPath: Packages/dev.f1yingbanana.sfizz-unity/Samples/Piano/SalamanderGrandPianoV3_OggVorbis/SalamanderGrandPianoV3Retuned.sfz
+  <InitialSfzFile>k__BackingField: {fileID: 102900000, guid: b88069a3a681e324b9835fd8fbb9ac37, type: 3}
 --- !u!4 &1976253448
 Transform:
   m_ObjectHideFlags: 0
