@@ -416,233 +416,513 @@ namespace F1yingBanana.SfizzUnity {
       return sfizz_get_cc_label_text(nativePtr, labelIndex);
     }
 #region Implementation
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern IntPtr sfizz_create_synth();
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_free(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_add_ref(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern bool sfizz_load_file(IntPtr synth, string path);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern bool sfizz_load_string(IntPtr synth, string path, string text);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern bool sfizz_load_scala_file(IntPtr synth, string path);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern bool sfizz_load_scala_string(IntPtr synth, string text);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_set_scala_root_key(IntPtr synth, int root_key);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_scala_root_key(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_set_tuning_frequency(IntPtr synth, float frequency);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern float sfizz_get_tuning_frequency(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_load_stretch_tuning_by_ratio(IntPtr synth, float ratio);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_num_regions(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_num_groups(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_num_masters(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_num_curves(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern string sfizz_export_midnam(IntPtr synth, string model);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_num_preloaded_samples(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_num_active_voices(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_set_samples_per_block(IntPtr synth, int samples_per_block);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_set_sample_rate(IntPtr synth, float sample_rate);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_note_on(IntPtr synth, int delay, int note_number,
                                                   int velocity);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_hd_note_on(IntPtr synth, int delay, int note_number,
                                                      float velocity);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_note_off(IntPtr synth, int delay, int note_number,
                                                    int velocity);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_hd_note_off(IntPtr synth, int delay, int note_number,
                                                       float velocity);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_cc(IntPtr synth, int delay, int cc_number, int cc_value);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_hdcc(IntPtr synth, int delay, int cc_number,
                                                float norm_value);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_program_change(IntPtr synth, int delay, int program);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_automate_hdcc(IntPtr synth, int delay, int cc_number,
                                                    float norm_value);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_pitch_wheel(IntPtr synth, int delay, int pitch);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_hd_pitch_wheel(IntPtr synth, int delay, float pitch);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_channel_aftertouch(IntPtr synth, int delay,
                                                              int aftertouch);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_hd_channel_aftertouch(IntPtr synth, int delay,
                                                                 float aftertouch);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_poly_aftertouch(IntPtr synth, int delay, int note_number,
                                                           int aftertouch);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_hd_poly_aftertouch(IntPtr synth, int delay,
                                                              int note_number, float aftertouch);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_bpm_tempo(IntPtr synth, int delay,
                                                     float beats_per_minute);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_time_signature(IntPtr synth, int delay, int beats_per_bar,
                                                          int beat_unit);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_time_position(IntPtr synth, int delay, int bar,
                                                         double bar_beat);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_send_playback_state(IntPtr synth, int delay,
                                                          int playback_state);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_render_block(IntPtr synth, IntPtr channels, int num_channels,
                                                   int num_frames);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_preload_size(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_set_preload_size(IntPtr synth, int preload_size);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern OversamplingFactor sfizz_get_oversampling_factor(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern bool sfizz_set_oversampling_factor(IntPtr synth,
                                                              OversamplingFactor oversampling);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_sample_quality(IntPtr synth, ProcessMode mode);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_set_sample_quality(IntPtr synth, ProcessMode mode,
                                                         int quality);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_oscillator_quality(IntPtr synth, ProcessMode mode);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_set_oscillator_quality(IntPtr synth, ProcessMode mode,
                                                             int quality);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_set_sustain_cancels_release(IntPtr synth, bool value);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_set_volume(IntPtr synth, float volume);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern float sfizz_get_volume(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_set_num_voices(IntPtr synth, int num_voices);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_num_voices(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_num_buffers(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_num_bytes(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_enable_freewheeling(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_disable_freewheeling(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern string sfizz_get_unknown_opcodes(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern bool sfizz_should_reload_file(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern bool sfizz_should_reload_scala(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_all_sound_off(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_add_external_definitions(IntPtr synth, string id,
                                                               string value);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_clear_external_definitions(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_num_key_labels(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_key_label_number(IntPtr synth, int label_index);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern string sfizz_get_key_label_text(IntPtr synth, int label_index);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_num_cc_labels(IntPtr synth);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern int sfizz_get_cc_label_number(IntPtr synth, int label_index);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern string sfizz_get_cc_label_text(IntPtr synth, int label_index);
 
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
     [DllImport("sfizz")]
+#endif
     private static extern void sfizz_free_memory(IntPtr ptr);
 
     /// <summary>
