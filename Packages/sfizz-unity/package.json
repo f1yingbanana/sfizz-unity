@@ -1,6 +1,6 @@
 {
   "name": "dev.f1yingbanana.sfizz-unity",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "displayName": "Sfizz for Unity",
   "description": "A Unity3D MIDI player with instruments defined in sfz format, using sfizz as the underlying sampler.",
   "unity": "2019.1",
@@ -20,5 +20,12 @@
   "author": {
     "name": "f1yingbanana",
     "url": "https://flyblog.antigear.dev"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Piano",
+      "description": "A keyboard piano showcasing SfizzPlayer. Requires Unity.InputManager.",
+      "path": "Samples~/Piano"
+    }
+  ]
 }

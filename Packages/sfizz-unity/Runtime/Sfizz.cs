@@ -43,6 +43,13 @@ namespace F1yingBanana.SfizzUnity {
       }
     }
 
+    /// <summary>
+    /// While this theoretically may take on a relative path, this cannot be achieved due to how the
+    /// path works differently on different build targets in Unity. This method should take an
+    /// absolute path for safety. Unity also removes directory structure on built players, so it is
+    /// necessary to take advantage of the StreamingAssets folder for files that should be included
+    /// in the build, and persistentDataPath for Android, WebGL downloaded assets.
+    /// </summary>
     public bool LoadFile(string path) {
       Debug.Assert(initialized);
       return sfizz_load_file(nativePtr, path);
@@ -239,6 +246,8 @@ namespace F1yingBanana.SfizzUnity {
     public void RenderBlock(float[][] buffer, int numChannels, int numFrames) {
       Debug.Assert(initialized);
       Debug.Assert(numChannels % 2 == 0);
+      Debug.Assert(numChannels > 0);
+      Debug.Assert(numFrames > 0);
       Debug.Assert(buffer.Length == numChannels);
 
       // The renderBlock method takes in a list of pointers to float arrays, one for each channel.
