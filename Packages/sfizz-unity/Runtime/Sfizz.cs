@@ -239,6 +239,8 @@ namespace F1yingBanana.SfizzUnity {
     public void RenderBlock(float[][] buffer, int numChannels, int numFrames) {
       Debug.Assert(initialized);
       Debug.Assert(numChannels % 2 == 0);
+      Debug.Assert(numChannels > 0);
+      Debug.Assert(numFrames > 0);
       Debug.Assert(buffer.Length == numChannels);
 
       // The renderBlock method takes in a list of pointers to float arrays, one for each channel.
