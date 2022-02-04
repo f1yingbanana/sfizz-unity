@@ -1,0 +1,690 @@
+//=====================================
+// Salamander Grand Piano V2
+// 
+// Author: Alexander Holm
+// Contact: axeldenstore [at] gmail [dot] com
+// License: CC-by
+// 
+//=====================================
+
+//Notes
+<group> amp_veltrack=73 ampeg_release=1
+
+<region> sample=ogg\A0v1.ogg lokey=21 hikey=22 lovel=1 hivel=26 pitch_keycenter=21 
+<region> sample=ogg\A0v2.ogg lokey=21 hikey=22 lovel=27 hivel=34 pitch_keycenter=21 
+<region> sample=ogg\A0v3.ogg lokey=21 hikey=22 lovel=35 hivel=36 pitch_keycenter=21 
+<region> sample=ogg\A0v4.ogg lokey=21 hikey=22 lovel=37 hivel=43 pitch_keycenter=21 
+<region> sample=ogg\A0v5.ogg lokey=21 hikey=22 lovel=44 hivel=46 pitch_keycenter=21 
+<region> sample=ogg\A0v6.ogg lokey=21 hikey=22 lovel=47 hivel=50 pitch_keycenter=21 
+<region> sample=ogg\A0v7.ogg lokey=21 hikey=22 lovel=51 hivel=56 pitch_keycenter=21 
+<region> sample=ogg\A0v8.ogg lokey=21 hikey=22 lovel=57 hivel=64 pitch_keycenter=21 
+<region> sample=ogg\A0v9.ogg lokey=21 hikey=22 lovel=65 hivel=72 pitch_keycenter=21 
+<region> sample=ogg\A0v10.ogg lokey=21 hikey=22 lovel=73 hivel=80 pitch_keycenter=21 
+<region> sample=ogg\A0v11.ogg lokey=21 hikey=22 lovel=81 hivel=88 pitch_keycenter=21 
+<region> sample=ogg\A0v12.ogg lokey=21 hikey=22 lovel=89 hivel=96 pitch_keycenter=21 
+<region> sample=ogg\A0v13.ogg lokey=21 hikey=22 lovel=97 hivel=104 pitch_keycenter=21 
+<region> sample=ogg\A0v14.ogg lokey=21 hikey=22 lovel=105 hivel=112 pitch_keycenter=21 
+<region> sample=ogg\A0v15.ogg lokey=21 hikey=22 lovel=113 hivel=120 pitch_keycenter=21 
+<region> sample=ogg\A0v16.ogg lokey=21 hikey=22 lovel=121 pitch_keycenter=21 
+<region> sample=ogg\C1v1.ogg lokey=23 hikey=25 lovel=1 hivel=26 pitch_keycenter=24 
+<region> sample=ogg\C1v2.ogg lokey=23 hikey=25 lovel=27 hivel=34 pitch_keycenter=24 
+<region> sample=ogg\C1v3.ogg lokey=23 hikey=25 lovel=35 hivel=36 pitch_keycenter=24 
+<region> sample=ogg\C1v4.ogg lokey=23 hikey=25 lovel=37 hivel=43 pitch_keycenter=24 
+<region> sample=ogg\C1v5.ogg lokey=23 hikey=25 lovel=44 hivel=46 pitch_keycenter=24 
+<region> sample=ogg\C1v6.ogg lokey=23 hikey=25 lovel=47 hivel=50 pitch_keycenter=24 
+<region> sample=ogg\C1v7.ogg lokey=23 hikey=25 lovel=51 hivel=56 pitch_keycenter=24 
+<region> sample=ogg\C1v8.ogg lokey=23 hikey=25 lovel=57 hivel=64 pitch_keycenter=24 
+<region> sample=ogg\C1v9.ogg lokey=23 hikey=25 lovel=65 hivel=72 pitch_keycenter=24 
+<region> sample=ogg\C1v10.ogg lokey=23 hikey=25 lovel=73 hivel=80 pitch_keycenter=24 
+<region> sample=ogg\C1v11.ogg lokey=23 hikey=25 lovel=81 hivel=88 pitch_keycenter=24 
+<region> sample=ogg\C1v12.ogg lokey=23 hikey=25 lovel=89 hivel=96 pitch_keycenter=24 
+<region> sample=ogg\C1v13.ogg lokey=23 hikey=25 lovel=97 hivel=104 pitch_keycenter=24 
+<region> sample=ogg\C1v14.ogg lokey=23 hikey=25 lovel=105 hivel=112 pitch_keycenter=24 
+<region> sample=ogg\C1v15.ogg lokey=23 hikey=25 lovel=113 hivel=120 pitch_keycenter=24 
+<region> sample=ogg\C1v16.ogg lokey=23 hikey=25 lovel=121 pitch_keycenter=24 
+<region> sample=ogg\D#1v1.ogg lokey=26 hikey=28 lovel=1 hivel=26 pitch_keycenter=27 
+<region> sample=ogg\D#1v2.ogg lokey=26 hikey=28 lovel=27 hivel=34 pitch_keycenter=27 
+<region> sample=ogg\D#1v3.ogg lokey=26 hikey=28 lovel=35 hivel=36 pitch_keycenter=27 
+<region> sample=ogg\D#1v4.ogg lokey=26 hikey=28 lovel=37 hivel=43 pitch_keycenter=27 
+<region> sample=ogg\D#1v5.ogg lokey=26 hikey=28 lovel=44 hivel=46 pitch_keycenter=27 
+<region> sample=ogg\D#1v6.ogg lokey=26 hikey=28 lovel=47 hivel=50 pitch_keycenter=27 
+<region> sample=ogg\D#1v7.ogg lokey=26 hikey=28 lovel=51 hivel=56 pitch_keycenter=27 
+<region> sample=ogg\D#1v8.ogg lokey=26 hikey=28 lovel=57 hivel=64 pitch_keycenter=27 
+<region> sample=ogg\D#1v9.ogg lokey=26 hikey=28 lovel=65 hivel=72 pitch_keycenter=27 
+<region> sample=ogg\D#1v10.ogg lokey=26 hikey=28 lovel=73 hivel=80 pitch_keycenter=27 
+<region> sample=ogg\D#1v11.ogg lokey=26 hikey=28 lovel=81 hivel=88 pitch_keycenter=27 
+<region> sample=ogg\D#1v12.ogg lokey=26 hikey=28 lovel=89 hivel=96 pitch_keycenter=27 
+<region> sample=ogg\D#1v13.ogg lokey=26 hikey=28 lovel=97 hivel=104 pitch_keycenter=27 
+<region> sample=ogg\D#1v14.ogg lokey=26 hikey=28 lovel=105 hivel=112 pitch_keycenter=27 
+<region> sample=ogg\D#1v15.ogg lokey=26 hikey=28 lovel=113 hivel=120 pitch_keycenter=27 
+<region> sample=ogg\D#1v16.ogg lokey=26 hikey=28 lovel=121 pitch_keycenter=27 
+<region> sample=ogg\F#1v1.ogg lokey=29 hikey=31 lovel=1 hivel=26 pitch_keycenter=30 
+<region> sample=ogg\F#1v2.ogg lokey=29 hikey=31 lovel=27 hivel=34 pitch_keycenter=30 
+<region> sample=ogg\F#1v3.ogg lokey=29 hikey=31 lovel=35 hivel=36 pitch_keycenter=30 
+<region> sample=ogg\F#1v4.ogg lokey=29 hikey=31 lovel=37 hivel=43 pitch_keycenter=30 
+<region> sample=ogg\F#1v5.ogg lokey=29 hikey=31 lovel=44 hivel=46 pitch_keycenter=30 
+<region> sample=ogg\F#1v6.ogg lokey=29 hikey=31 lovel=47 hivel=50 pitch_keycenter=30 
+<region> sample=ogg\F#1v7.ogg lokey=29 hikey=31 lovel=51 hivel=56 pitch_keycenter=30 
+<region> sample=ogg\F#1v8.ogg lokey=29 hikey=31 lovel=57 hivel=64 pitch_keycenter=30 
+<region> sample=ogg\F#1v9.ogg lokey=29 hikey=31 lovel=65 hivel=72 pitch_keycenter=30 
+<region> sample=ogg\F#1v10.ogg lokey=29 hikey=31 lovel=73 hivel=80 pitch_keycenter=30 
+<region> sample=ogg\F#1v11.ogg lokey=29 hikey=31 lovel=81 hivel=88 pitch_keycenter=30 
+<region> sample=ogg\F#1v12.ogg lokey=29 hikey=31 lovel=89 hivel=96 pitch_keycenter=30 
+<region> sample=ogg\F#1v13.ogg lokey=29 hikey=31 lovel=97 hivel=104 pitch_keycenter=30 
+<region> sample=ogg\F#1v14.ogg lokey=29 hikey=31 lovel=105 hivel=112 pitch_keycenter=30 
+<region> sample=ogg\F#1v15.ogg lokey=29 hikey=31 lovel=113 hivel=120 pitch_keycenter=30 
+<region> sample=ogg\F#1v16.ogg lokey=29 hikey=31 lovel=121 pitch_keycenter=30 
+<region> sample=ogg\A1v1.ogg lokey=32 hikey=34 lovel=1 hivel=26 pitch_keycenter=33 
+<region> sample=ogg\A1v2.ogg lokey=32 hikey=34 lovel=27 hivel=34 pitch_keycenter=33 
+<region> sample=ogg\A1v3.ogg lokey=32 hikey=34 lovel=35 hivel=36 pitch_keycenter=33 
+<region> sample=ogg\A1v4.ogg lokey=32 hikey=34 lovel=37 hivel=43 pitch_keycenter=33 
+<region> sample=ogg\A1v5.ogg lokey=32 hikey=34 lovel=44 hivel=46 pitch_keycenter=33 
+<region> sample=ogg\A1v6.ogg lokey=32 hikey=34 lovel=47 hivel=50 pitch_keycenter=33 
+<region> sample=ogg\A1v7.ogg lokey=32 hikey=34 lovel=51 hivel=56 pitch_keycenter=33 
+<region> sample=ogg\A1v8.ogg lokey=32 hikey=34 lovel=57 hivel=64 pitch_keycenter=33 
+<region> sample=ogg\A1v9.ogg lokey=32 hikey=34 lovel=65 hivel=72 pitch_keycenter=33 
+<region> sample=ogg\A1v10.ogg lokey=32 hikey=34 lovel=73 hivel=80 pitch_keycenter=33 
+<region> sample=ogg\A1v11.ogg lokey=32 hikey=34 lovel=81 hivel=88 pitch_keycenter=33 
+<region> sample=ogg\A1v12.ogg lokey=32 hikey=34 lovel=89 hivel=96 pitch_keycenter=33 
+<region> sample=ogg\A1v13.ogg lokey=32 hikey=34 lovel=97 hivel=104 pitch_keycenter=33 
+<region> sample=ogg\A1v14.ogg lokey=32 hikey=34 lovel=105 hivel=112 pitch_keycenter=33 
+<region> sample=ogg\A1v15.ogg lokey=32 hikey=34 lovel=113 hivel=120 pitch_keycenter=33 
+<region> sample=ogg\A1v16.ogg lokey=32 hikey=34 lovel=121 pitch_keycenter=33 
+<region> sample=ogg\C2v1.ogg lokey=35 hikey=37 lovel=1 hivel=26 pitch_keycenter=36 
+<region> sample=ogg\C2v2.ogg lokey=35 hikey=37 lovel=27 hivel=34 pitch_keycenter=36 
+<region> sample=ogg\C2v3.ogg lokey=35 hikey=37 lovel=35 hivel=36 pitch_keycenter=36 
+<region> sample=ogg\C2v4.ogg lokey=35 hikey=37 lovel=37 hivel=43 pitch_keycenter=36 
+<region> sample=ogg\C2v5.ogg lokey=35 hikey=37 lovel=44 hivel=46 pitch_keycenter=36 
+<region> sample=ogg\C2v6.ogg lokey=35 hikey=37 lovel=47 hivel=50 pitch_keycenter=36 
+<region> sample=ogg\C2v7.ogg lokey=35 hikey=37 lovel=51 hivel=56 pitch_keycenter=36 
+<region> sample=ogg\C2v8.ogg lokey=35 hikey=37 lovel=57 hivel=64 pitch_keycenter=36 
+<region> sample=ogg\C2v9.ogg lokey=35 hikey=37 lovel=65 hivel=72 pitch_keycenter=36 
+<region> sample=ogg\C2v10.ogg lokey=35 hikey=37 lovel=73 hivel=80 pitch_keycenter=36 
+<region> sample=ogg\C2v11.ogg lokey=35 hikey=37 lovel=81 hivel=88 pitch_keycenter=36 
+<region> sample=ogg\C2v12.ogg lokey=35 hikey=37 lovel=89 hivel=96 pitch_keycenter=36 
+<region> sample=ogg\C2v13.ogg lokey=35 hikey=37 lovel=97 hivel=104 pitch_keycenter=36 
+<region> sample=ogg\C2v14.ogg lokey=35 hikey=37 lovel=105 hivel=112 pitch_keycenter=36 
+<region> sample=ogg\C2v15.ogg lokey=35 hikey=37 lovel=113 hivel=120 pitch_keycenter=36 
+<region> sample=ogg\C2v16.ogg lokey=35 hikey=37 lovel=121 pitch_keycenter=36 
+<region> sample=ogg\D#2v1.ogg lokey=38 hikey=40 lovel=1 hivel=26 pitch_keycenter=39 
+<region> sample=ogg\D#2v2.ogg lokey=38 hikey=40 lovel=27 hivel=34 pitch_keycenter=39 
+<region> sample=ogg\D#2v3.ogg lokey=38 hikey=40 lovel=35 hivel=36 pitch_keycenter=39 
+<region> sample=ogg\D#2v4.ogg lokey=38 hikey=40 lovel=37 hivel=43 pitch_keycenter=39 
+<region> sample=ogg\D#2v5.ogg lokey=38 hikey=40 lovel=44 hivel=46 pitch_keycenter=39 
+<region> sample=ogg\D#2v6.ogg lokey=38 hikey=40 lovel=47 hivel=50 pitch_keycenter=39 
+<region> sample=ogg\D#2v7.ogg lokey=38 hikey=40 lovel=51 hivel=56 pitch_keycenter=39 
+<region> sample=ogg\D#2v8.ogg lokey=38 hikey=40 lovel=57 hivel=64 pitch_keycenter=39 
+<region> sample=ogg\D#2v9.ogg lokey=38 hikey=40 lovel=65 hivel=72 pitch_keycenter=39 
+<region> sample=ogg\D#2v10.ogg lokey=38 hikey=40 lovel=73 hivel=80 pitch_keycenter=39 
+<region> sample=ogg\D#2v11.ogg lokey=38 hikey=40 lovel=81 hivel=88 pitch_keycenter=39 
+<region> sample=ogg\D#2v12.ogg lokey=38 hikey=40 lovel=89 hivel=96 pitch_keycenter=39 
+<region> sample=ogg\D#2v13.ogg lokey=38 hikey=40 lovel=97 hivel=104 pitch_keycenter=39 
+<region> sample=ogg\D#2v14.ogg lokey=38 hikey=40 lovel=105 hivel=112 pitch_keycenter=39 
+<region> sample=ogg\D#2v15.ogg lokey=38 hikey=40 lovel=113 hivel=120 pitch_keycenter=39 
+<region> sample=ogg\D#2v16.ogg lokey=38 hikey=40 lovel=121 pitch_keycenter=39 
+<region> sample=ogg\F#2v1.ogg lokey=41 hikey=43 lovel=1 hivel=26 pitch_keycenter=42 
+<region> sample=ogg\F#2v2.ogg lokey=41 hikey=43 lovel=27 hivel=34 pitch_keycenter=42 
+<region> sample=ogg\F#2v3.ogg lokey=41 hikey=43 lovel=35 hivel=36 pitch_keycenter=42 
+<region> sample=ogg\F#2v4.ogg lokey=41 hikey=43 lovel=37 hivel=43 pitch_keycenter=42 
+<region> sample=ogg\F#2v5.ogg lokey=41 hikey=43 lovel=44 hivel=46 pitch_keycenter=42 
+<region> sample=ogg\F#2v6.ogg lokey=41 hikey=43 lovel=47 hivel=50 pitch_keycenter=42 
+<region> sample=ogg\F#2v7.ogg lokey=41 hikey=43 lovel=51 hivel=56 pitch_keycenter=42 
+<region> sample=ogg\F#2v8.ogg lokey=41 hikey=43 lovel=57 hivel=64 pitch_keycenter=42 
+<region> sample=ogg\F#2v9.ogg lokey=41 hikey=43 lovel=65 hivel=72 pitch_keycenter=42 
+<region> sample=ogg\F#2v10.ogg lokey=41 hikey=43 lovel=73 hivel=80 pitch_keycenter=42 
+<region> sample=ogg\F#2v11.ogg lokey=41 hikey=43 lovel=81 hivel=88 pitch_keycenter=42 
+<region> sample=ogg\F#2v12.ogg lokey=41 hikey=43 lovel=89 hivel=96 pitch_keycenter=42 
+<region> sample=ogg\F#2v13.ogg lokey=41 hikey=43 lovel=97 hivel=104 pitch_keycenter=42 
+<region> sample=ogg\F#2v14.ogg lokey=41 hikey=43 lovel=105 hivel=112 pitch_keycenter=42 
+<region> sample=ogg\F#2v15.ogg lokey=41 hikey=43 lovel=113 hivel=120 pitch_keycenter=42 
+<region> sample=ogg\F#2v16.ogg lokey=41 hikey=43 lovel=121 pitch_keycenter=42 
+<region> sample=ogg\A2v1.ogg lokey=44 hikey=46 lovel=1 hivel=26 pitch_keycenter=45 
+<region> sample=ogg\A2v2.ogg lokey=44 hikey=46 lovel=27 hivel=34 pitch_keycenter=45 
+<region> sample=ogg\A2v3.ogg lokey=44 hikey=46 lovel=35 hivel=36 pitch_keycenter=45 
+<region> sample=ogg\A2v4.ogg lokey=44 hikey=46 lovel=37 hivel=43 pitch_keycenter=45 
+<region> sample=ogg\A2v5.ogg lokey=44 hikey=46 lovel=44 hivel=46 pitch_keycenter=45 
+<region> sample=ogg\A2v6.ogg lokey=44 hikey=46 lovel=47 hivel=50 pitch_keycenter=45 
+<region> sample=ogg\A2v7.ogg lokey=44 hikey=46 lovel=51 hivel=56 pitch_keycenter=45 
+<region> sample=ogg\A2v8.ogg lokey=44 hikey=46 lovel=57 hivel=64 pitch_keycenter=45 
+<region> sample=ogg\A2v9.ogg lokey=44 hikey=46 lovel=65 hivel=72 pitch_keycenter=45 
+<region> sample=ogg\A2v10.ogg lokey=44 hikey=46 lovel=73 hivel=80 pitch_keycenter=45 
+<region> sample=ogg\A2v11.ogg lokey=44 hikey=46 lovel=81 hivel=88 pitch_keycenter=45 
+<region> sample=ogg\A2v12.ogg lokey=44 hikey=46 lovel=89 hivel=96 pitch_keycenter=45 
+<region> sample=ogg\A2v13.ogg lokey=44 hikey=46 lovel=97 hivel=104 pitch_keycenter=45 
+<region> sample=ogg\A2v14.ogg lokey=44 hikey=46 lovel=105 hivel=112 pitch_keycenter=45 
+<region> sample=ogg\A2v15.ogg lokey=44 hikey=46 lovel=113 hivel=120 pitch_keycenter=45 
+<region> sample=ogg\A2v16.ogg lokey=44 hikey=46 lovel=121 pitch_keycenter=45 
+<region> sample=ogg\C3v1.ogg lokey=47 hikey=49 lovel=1 hivel=26 pitch_keycenter=48 
+<region> sample=ogg\C3v2.ogg lokey=47 hikey=49 lovel=27 hivel=34 pitch_keycenter=48 
+<region> sample=ogg\C3v3.ogg lokey=47 hikey=49 lovel=35 hivel=36 pitch_keycenter=48 
+<region> sample=ogg\C3v4.ogg lokey=47 hikey=49 lovel=37 hivel=43 pitch_keycenter=48 
+<region> sample=ogg\C3v5.ogg lokey=47 hikey=49 lovel=44 hivel=46 pitch_keycenter=48 
+<region> sample=ogg\C3v6.ogg lokey=47 hikey=49 lovel=47 hivel=50 pitch_keycenter=48 
+<region> sample=ogg\C3v7.ogg lokey=47 hikey=49 lovel=51 hivel=56 pitch_keycenter=48 
+<region> sample=ogg\C3v8.ogg lokey=47 hikey=49 lovel=57 hivel=64 pitch_keycenter=48 
+<region> sample=ogg\C3v9.ogg lokey=47 hikey=49 lovel=65 hivel=72 pitch_keycenter=48 
+<region> sample=ogg\C3v10.ogg lokey=47 hikey=49 lovel=73 hivel=80 pitch_keycenter=48 
+<region> sample=ogg\C3v11.ogg lokey=47 hikey=49 lovel=81 hivel=88 pitch_keycenter=48 
+<region> sample=ogg\C3v12.ogg lokey=47 hikey=49 lovel=89 hivel=96 pitch_keycenter=48 
+<region> sample=ogg\C3v13.ogg lokey=47 hikey=49 lovel=97 hivel=104 pitch_keycenter=48 
+<region> sample=ogg\C3v14.ogg lokey=47 hikey=49 lovel=105 hivel=112 pitch_keycenter=48 
+<region> sample=ogg\C3v15.ogg lokey=47 hikey=49 lovel=113 hivel=120 pitch_keycenter=48 
+<region> sample=ogg\C3v16.ogg lokey=47 hikey=49 lovel=121 pitch_keycenter=48 
+<region> sample=ogg\D#3v1.ogg lokey=50 hikey=52 lovel=1 hivel=26 pitch_keycenter=51 
+<region> sample=ogg\D#3v2.ogg lokey=50 hikey=52 lovel=27 hivel=34 pitch_keycenter=51 
+<region> sample=ogg\D#3v3.ogg lokey=50 hikey=52 lovel=35 hivel=36 pitch_keycenter=51 
+<region> sample=ogg\D#3v4.ogg lokey=50 hikey=52 lovel=37 hivel=43 pitch_keycenter=51 
+<region> sample=ogg\D#3v5.ogg lokey=50 hikey=52 lovel=44 hivel=46 pitch_keycenter=51 
+<region> sample=ogg\D#3v6.ogg lokey=50 hikey=52 lovel=47 hivel=50 pitch_keycenter=51 
+<region> sample=ogg\D#3v7.ogg lokey=50 hikey=52 lovel=51 hivel=56 pitch_keycenter=51 
+<region> sample=ogg\D#3v8.ogg lokey=50 hikey=52 lovel=57 hivel=64 pitch_keycenter=51 
+<region> sample=ogg\D#3v9.ogg lokey=50 hikey=52 lovel=65 hivel=72 pitch_keycenter=51 
+<region> sample=ogg\D#3v10.ogg lokey=50 hikey=52 lovel=73 hivel=80 pitch_keycenter=51 
+<region> sample=ogg\D#3v11.ogg lokey=50 hikey=52 lovel=81 hivel=88 pitch_keycenter=51 
+<region> sample=ogg\D#3v12.ogg lokey=50 hikey=52 lovel=89 hivel=96 pitch_keycenter=51 
+<region> sample=ogg\D#3v13.ogg lokey=50 hikey=52 lovel=97 hivel=104 pitch_keycenter=51 
+<region> sample=ogg\D#3v14.ogg lokey=50 hikey=52 lovel=105 hivel=112 pitch_keycenter=51 
+<region> sample=ogg\D#3v15.ogg lokey=50 hikey=52 lovel=113 hivel=120 pitch_keycenter=51 
+<region> sample=ogg\D#3v16.ogg lokey=50 hikey=52 lovel=121 pitch_keycenter=51 
+<region> sample=ogg\F#3v1.ogg lokey=53 hikey=55 lovel=1 hivel=26 pitch_keycenter=54 
+<region> sample=ogg\F#3v2.ogg lokey=53 hikey=55 lovel=27 hivel=34 pitch_keycenter=54 
+<region> sample=ogg\F#3v3.ogg lokey=53 hikey=55 lovel=35 hivel=36 pitch_keycenter=54 
+<region> sample=ogg\F#3v4.ogg lokey=53 hikey=55 lovel=37 hivel=43 pitch_keycenter=54 
+<region> sample=ogg\F#3v5.ogg lokey=53 hikey=55 lovel=44 hivel=46 pitch_keycenter=54 
+<region> sample=ogg\F#3v6.ogg lokey=53 hikey=55 lovel=47 hivel=50 pitch_keycenter=54 
+<region> sample=ogg\F#3v7.ogg lokey=53 hikey=55 lovel=51 hivel=56 pitch_keycenter=54 
+<region> sample=ogg\F#3v8.ogg lokey=53 hikey=55 lovel=57 hivel=64 pitch_keycenter=54 
+<region> sample=ogg\F#3v9.ogg lokey=53 hikey=55 lovel=65 hivel=72 pitch_keycenter=54 
+<region> sample=ogg\F#3v10.ogg lokey=53 hikey=55 lovel=73 hivel=80 pitch_keycenter=54 
+<region> sample=ogg\F#3v11.ogg lokey=53 hikey=55 lovel=81 hivel=88 pitch_keycenter=54 
+<region> sample=ogg\F#3v12.ogg lokey=53 hikey=55 lovel=89 hivel=96 pitch_keycenter=54 
+<region> sample=ogg\F#3v13.ogg lokey=53 hikey=55 lovel=97 hivel=104 pitch_keycenter=54 
+<region> sample=ogg\F#3v14.ogg lokey=53 hikey=55 lovel=105 hivel=112 pitch_keycenter=54 
+<region> sample=ogg\F#3v15.ogg lokey=53 hikey=55 lovel=113 hivel=120 pitch_keycenter=54 
+<region> sample=ogg\F#3v16.ogg lokey=53 hikey=55 lovel=121 pitch_keycenter=54 
+<region> sample=ogg\A3v1.ogg lokey=56 hikey=58 lovel=1 hivel=26 pitch_keycenter=57 
+<region> sample=ogg\A3v2.ogg lokey=56 hikey=58 lovel=27 hivel=34 pitch_keycenter=57 
+<region> sample=ogg\A3v3.ogg lokey=56 hikey=58 lovel=35 hivel=36 pitch_keycenter=57 
+<region> sample=ogg\A3v4.ogg lokey=56 hikey=58 lovel=37 hivel=43 pitch_keycenter=57 
+<region> sample=ogg\A3v5.ogg lokey=56 hikey=58 lovel=44 hivel=46 pitch_keycenter=57 
+<region> sample=ogg\A3v6.ogg lokey=56 hikey=58 lovel=47 hivel=50 pitch_keycenter=57 
+<region> sample=ogg\A3v7.ogg lokey=56 hikey=58 lovel=51 hivel=56 pitch_keycenter=57 
+<region> sample=ogg\A3v8.ogg lokey=56 hikey=58 lovel=57 hivel=64 pitch_keycenter=57 
+<region> sample=ogg\A3v9.ogg lokey=56 hikey=58 lovel=65 hivel=72 pitch_keycenter=57 
+<region> sample=ogg\A3v10.ogg lokey=56 hikey=58 lovel=73 hivel=80 pitch_keycenter=57 
+<region> sample=ogg\A3v11.ogg lokey=56 hikey=58 lovel=81 hivel=88 pitch_keycenter=57 
+<region> sample=ogg\A3v12.ogg lokey=56 hikey=58 lovel=89 hivel=96 pitch_keycenter=57 
+<region> sample=ogg\A3v13.ogg lokey=56 hikey=58 lovel=97 hivel=104 pitch_keycenter=57 
+<region> sample=ogg\A3v14.ogg lokey=56 hikey=58 lovel=105 hivel=112 pitch_keycenter=57 
+<region> sample=ogg\A3v15.ogg lokey=56 hikey=58 lovel=113 hivel=120 pitch_keycenter=57 
+<region> sample=ogg\A3v16.ogg lokey=56 hikey=58 lovel=121 pitch_keycenter=57 
+<region> sample=ogg\C4v1.ogg lokey=59 hikey=61 lovel=1 hivel=26 
+<region> sample=ogg\C4v2.ogg lokey=59 hikey=61 lovel=27 hivel=34 
+<region> sample=ogg\C4v3.ogg lokey=59 hikey=61 lovel=35 hivel=36 
+<region> sample=ogg\C4v4.ogg lokey=59 hikey=61 lovel=37 hivel=43 
+<region> sample=ogg\C4v5.ogg lokey=59 hikey=61 lovel=44 hivel=46 
+<region> sample=ogg\C4v6.ogg lokey=59 hikey=61 lovel=47 hivel=50 
+<region> sample=ogg\C4v7.ogg lokey=59 hikey=61 lovel=51 hivel=56 
+<region> sample=ogg\C4v8.ogg lokey=59 hikey=61 lovel=57 hivel=64 
+<region> sample=ogg\C4v9.ogg lokey=59 hikey=61 lovel=65 hivel=72 
+<region> sample=ogg\C4v10.ogg lokey=59 hikey=61 lovel=73 hivel=80 
+<region> sample=ogg\C4v11.ogg lokey=59 hikey=61 lovel=81 hivel=88 
+<region> sample=ogg\C4v12.ogg lokey=59 hikey=61 lovel=89 hivel=96 
+<region> sample=ogg\C4v13.ogg lokey=59 hikey=61 lovel=97 hivel=104 
+<region> sample=ogg\C4v14.ogg lokey=59 hikey=61 lovel=105 hivel=112 
+<region> sample=ogg\C4v15.ogg lokey=59 hikey=61 lovel=113 hivel=120 
+<region> sample=ogg\C4v16.ogg lokey=59 hikey=61 lovel=121
+<region> sample=ogg\D#4v1.ogg lokey=62 hikey=64 lovel=1 hivel=26 pitch_keycenter=63 
+<region> sample=ogg\D#4v2.ogg lokey=62 hikey=64 lovel=27 hivel=34 pitch_keycenter=63 
+<region> sample=ogg\D#4v3.ogg lokey=62 hikey=64 lovel=35 hivel=36 pitch_keycenter=63 
+<region> sample=ogg\D#4v4.ogg lokey=62 hikey=64 lovel=37 hivel=43 pitch_keycenter=63 
+<region> sample=ogg\D#4v5.ogg lokey=62 hikey=64 lovel=44 hivel=46 pitch_keycenter=63 
+<region> sample=ogg\D#4v6.ogg lokey=62 hikey=64 lovel=47 hivel=50 pitch_keycenter=63 
+<region> sample=ogg\D#4v7.ogg lokey=62 hikey=64 lovel=51 hivel=56 pitch_keycenter=63 
+<region> sample=ogg\D#4v8.ogg lokey=62 hikey=64 lovel=57 hivel=64 pitch_keycenter=63 
+<region> sample=ogg\D#4v9.ogg lokey=62 hikey=64 lovel=65 hivel=72 pitch_keycenter=63 
+<region> sample=ogg\D#4v10.ogg lokey=62 hikey=64 lovel=73 hivel=80 pitch_keycenter=63 
+<region> sample=ogg\D#4v11.ogg lokey=62 hikey=64 lovel=81 hivel=88 pitch_keycenter=63 
+<region> sample=ogg\D#4v12.ogg lokey=62 hikey=64 lovel=89 hivel=96 pitch_keycenter=63 
+<region> sample=ogg\D#4v13.ogg lokey=62 hikey=64 lovel=97 hivel=104 pitch_keycenter=63 
+<region> sample=ogg\D#4v14.ogg lokey=62 hikey=64 lovel=105 hivel=112 pitch_keycenter=63 
+<region> sample=ogg\D#4v15.ogg lokey=62 hikey=64 lovel=113 hivel=120 pitch_keycenter=63 
+<region> sample=ogg\D#4v16.ogg lokey=62 hikey=64 lovel=121 pitch_keycenter=63 
+<region> sample=ogg\F#4v1.ogg lokey=65 hikey=67 lovel=1 hivel=26 pitch_keycenter=66 
+<region> sample=ogg\F#4v2.ogg lokey=65 hikey=67 lovel=27 hivel=34 pitch_keycenter=66 
+<region> sample=ogg\F#4v3.ogg lokey=65 hikey=67 lovel=35 hivel=36 pitch_keycenter=66 
+<region> sample=ogg\F#4v4.ogg lokey=65 hikey=67 lovel=37 hivel=43 pitch_keycenter=66 
+<region> sample=ogg\F#4v5.ogg lokey=65 hikey=67 lovel=44 hivel=46 pitch_keycenter=66 
+<region> sample=ogg\F#4v6.ogg lokey=65 hikey=67 lovel=47 hivel=50 pitch_keycenter=66 
+<region> sample=ogg\F#4v7.ogg lokey=65 hikey=67 lovel=51 hivel=56 pitch_keycenter=66 
+<region> sample=ogg\F#4v8.ogg lokey=65 hikey=67 lovel=57 hivel=64 pitch_keycenter=66 
+<region> sample=ogg\F#4v9.ogg lokey=65 hikey=67 lovel=65 hivel=72 pitch_keycenter=66 
+<region> sample=ogg\F#4v10.ogg lokey=65 hikey=67 lovel=73 hivel=80 pitch_keycenter=66 
+<region> sample=ogg\F#4v11.ogg lokey=65 hikey=67 lovel=81 hivel=88 pitch_keycenter=66 
+<region> sample=ogg\F#4v12.ogg lokey=65 hikey=67 lovel=89 hivel=96 pitch_keycenter=66 
+<region> sample=ogg\F#4v13.ogg lokey=65 hikey=67 lovel=97 hivel=104 pitch_keycenter=66 
+<region> sample=ogg\F#4v14.ogg lokey=65 hikey=67 lovel=105 hivel=112 pitch_keycenter=66 
+<region> sample=ogg\F#4v15.ogg lokey=65 hikey=67 lovel=113 hivel=120 pitch_keycenter=66 
+<region> sample=ogg\F#4v16.ogg lokey=65 hikey=67 lovel=121 pitch_keycenter=66 
+<region> sample=ogg\A4v1.ogg lokey=68 hikey=70 lovel=1 hivel=26 pitch_keycenter=69 
+<region> sample=ogg\A4v2.ogg lokey=68 hikey=70 lovel=27 hivel=34 pitch_keycenter=69 
+<region> sample=ogg\A4v3.ogg lokey=68 hikey=70 lovel=35 hivel=36 pitch_keycenter=69 
+<region> sample=ogg\A4v4.ogg lokey=68 hikey=70 lovel=37 hivel=43 pitch_keycenter=69 
+<region> sample=ogg\A4v5.ogg lokey=68 hikey=70 lovel=44 hivel=46 pitch_keycenter=69 
+<region> sample=ogg\A4v6.ogg lokey=68 hikey=70 lovel=47 hivel=50 pitch_keycenter=69 
+<region> sample=ogg\A4v7.ogg lokey=68 hikey=70 lovel=51 hivel=56 pitch_keycenter=69 
+<region> sample=ogg\A4v8.ogg lokey=68 hikey=70 lovel=57 hivel=64 pitch_keycenter=69 
+<region> sample=ogg\A4v9.ogg lokey=68 hikey=70 lovel=65 hivel=72 pitch_keycenter=69 
+<region> sample=ogg\A4v10.ogg lokey=68 hikey=70 lovel=73 hivel=80 pitch_keycenter=69 
+<region> sample=ogg\A4v11.ogg lokey=68 hikey=70 lovel=81 hivel=88 pitch_keycenter=69 
+<region> sample=ogg\A4v12.ogg lokey=68 hikey=70 lovel=89 hivel=96 pitch_keycenter=69 
+<region> sample=ogg\A4v13.ogg lokey=68 hikey=70 lovel=97 hivel=104 pitch_keycenter=69 
+<region> sample=ogg\A4v14.ogg lokey=68 hikey=70 lovel=105 hivel=112 pitch_keycenter=69 
+<region> sample=ogg\A4v15.ogg lokey=68 hikey=70 lovel=113 hivel=120 pitch_keycenter=69 
+<region> sample=ogg\A4v16.ogg lokey=68 hikey=70 lovel=121 pitch_keycenter=69 
+<region> sample=ogg\C5v1.ogg lokey=71 hikey=73 lovel=1 hivel=26 pitch_keycenter=72 
+<region> sample=ogg\C5v2.ogg lokey=71 hikey=73 lovel=27 hivel=34 pitch_keycenter=72 
+<region> sample=ogg\C5v3.ogg lokey=71 hikey=73 lovel=35 hivel=36 pitch_keycenter=72 
+<region> sample=ogg\C5v4.ogg lokey=71 hikey=73 lovel=37 hivel=43 pitch_keycenter=72 
+<region> sample=ogg\C5v5.ogg lokey=71 hikey=73 lovel=44 hivel=46 pitch_keycenter=72 
+<region> sample=ogg\C5v6.ogg lokey=71 hikey=73 lovel=47 hivel=50 pitch_keycenter=72 
+<region> sample=ogg\C5v7.ogg lokey=71 hikey=73 lovel=51 hivel=56 pitch_keycenter=72 
+<region> sample=ogg\C5v8.ogg lokey=71 hikey=73 lovel=57 hivel=64 pitch_keycenter=72 
+<region> sample=ogg\C5v9.ogg lokey=71 hikey=73 lovel=65 hivel=72 pitch_keycenter=72 
+<region> sample=ogg\C5v10.ogg lokey=71 hikey=73 lovel=73 hivel=80 pitch_keycenter=72 
+<region> sample=ogg\C5v11.ogg lokey=71 hikey=73 lovel=81 hivel=88 pitch_keycenter=72 
+<region> sample=ogg\C5v12.ogg lokey=71 hikey=73 lovel=89 hivel=96 pitch_keycenter=72 
+<region> sample=ogg\C5v13.ogg lokey=71 hikey=73 lovel=97 hivel=104 pitch_keycenter=72 
+<region> sample=ogg\C5v14.ogg lokey=71 hikey=73 lovel=105 hivel=112 pitch_keycenter=72 
+<region> sample=ogg\C5v15.ogg lokey=71 hikey=73 lovel=113 hivel=120 pitch_keycenter=72 
+<region> sample=ogg\C5v16.ogg lokey=71 hikey=73 lovel=121 pitch_keycenter=72 
+<region> sample=ogg\D#5v1.ogg lokey=74 hikey=76 lovel=1 hivel=26 pitch_keycenter=75 
+<region> sample=ogg\D#5v2.ogg lokey=74 hikey=76 lovel=27 hivel=34 pitch_keycenter=75 
+<region> sample=ogg\D#5v3.ogg lokey=74 hikey=76 lovel=35 hivel=36 pitch_keycenter=75 
+<region> sample=ogg\D#5v4.ogg lokey=74 hikey=76 lovel=37 hivel=43 pitch_keycenter=75 
+<region> sample=ogg\D#5v5.ogg lokey=74 hikey=76 lovel=44 hivel=46 pitch_keycenter=75 
+<region> sample=ogg\D#5v6.ogg lokey=74 hikey=76 lovel=47 hivel=50 pitch_keycenter=75 
+<region> sample=ogg\D#5v7.ogg lokey=74 hikey=76 lovel=51 hivel=56 pitch_keycenter=75 
+<region> sample=ogg\D#5v8.ogg lokey=74 hikey=76 lovel=57 hivel=64 pitch_keycenter=75 
+<region> sample=ogg\D#5v9.ogg lokey=74 hikey=76 lovel=65 hivel=72 pitch_keycenter=75 
+<region> sample=ogg\D#5v10.ogg lokey=74 hikey=76 lovel=73 hivel=80 pitch_keycenter=75 
+<region> sample=ogg\D#5v11.ogg lokey=74 hikey=76 lovel=81 hivel=88 pitch_keycenter=75 
+<region> sample=ogg\D#5v12.ogg lokey=74 hikey=76 lovel=89 hivel=96 pitch_keycenter=75 
+<region> sample=ogg\D#5v13.ogg lokey=74 hikey=76 lovel=97 hivel=104 pitch_keycenter=75 
+<region> sample=ogg\D#5v14.ogg lokey=74 hikey=76 lovel=105 hivel=112 pitch_keycenter=75 
+<region> sample=ogg\D#5v15.ogg lokey=74 hikey=76 lovel=113 hivel=120 pitch_keycenter=75 
+<region> sample=ogg\D#5v16.ogg lokey=74 hikey=76 lovel=121 pitch_keycenter=75 
+<region> sample=ogg\F#5v1.ogg lokey=77 hikey=79 lovel=1 hivel=26 pitch_keycenter=78 
+<region> sample=ogg\F#5v2.ogg lokey=77 hikey=79 lovel=27 hivel=34 pitch_keycenter=78 
+<region> sample=ogg\F#5v3.ogg lokey=77 hikey=79 lovel=35 hivel=36 pitch_keycenter=78 
+<region> sample=ogg\F#5v4.ogg lokey=77 hikey=79 lovel=37 hivel=43 pitch_keycenter=78 
+<region> sample=ogg\F#5v5.ogg lokey=77 hikey=79 lovel=44 hivel=46 pitch_keycenter=78 
+<region> sample=ogg\F#5v6.ogg lokey=77 hikey=79 lovel=47 hivel=50 pitch_keycenter=78 
+<region> sample=ogg\F#5v7.ogg lokey=77 hikey=79 lovel=51 hivel=56 pitch_keycenter=78 
+<region> sample=ogg\F#5v8.ogg lokey=77 hikey=79 lovel=57 hivel=64 pitch_keycenter=78 
+<region> sample=ogg\F#5v9.ogg lokey=77 hikey=79 lovel=65 hivel=72 pitch_keycenter=78 
+<region> sample=ogg\F#5v10.ogg lokey=77 hikey=79 lovel=73 hivel=80 pitch_keycenter=78 
+<region> sample=ogg\F#5v11.ogg lokey=77 hikey=79 lovel=81 hivel=88 pitch_keycenter=78 
+<region> sample=ogg\F#5v12.ogg lokey=77 hikey=79 lovel=89 hivel=96 pitch_keycenter=78 
+<region> sample=ogg\F#5v13.ogg lokey=77 hikey=79 lovel=97 hivel=104 pitch_keycenter=78 
+<region> sample=ogg\F#5v14.ogg lokey=77 hikey=79 lovel=105 hivel=112 pitch_keycenter=78 
+<region> sample=ogg\F#5v15.ogg lokey=77 hikey=79 lovel=113 hivel=120 pitch_keycenter=78 
+<region> sample=ogg\F#5v16.ogg lokey=77 hikey=79 lovel=121 pitch_keycenter=78 
+<region> sample=ogg\A5v1.ogg lokey=80 hikey=82 lovel=1 hivel=26 pitch_keycenter=81 
+<region> sample=ogg\A5v2.ogg lokey=80 hikey=82 lovel=27 hivel=34 pitch_keycenter=81 
+<region> sample=ogg\A5v3.ogg lokey=80 hikey=82 lovel=35 hivel=36 pitch_keycenter=81 
+<region> sample=ogg\A5v4.ogg lokey=80 hikey=82 lovel=37 hivel=43 pitch_keycenter=81 
+<region> sample=ogg\A5v5.ogg lokey=80 hikey=82 lovel=44 hivel=46 pitch_keycenter=81 
+<region> sample=ogg\A5v6.ogg lokey=80 hikey=82 lovel=47 hivel=50 pitch_keycenter=81 
+<region> sample=ogg\A5v7.ogg lokey=80 hikey=82 lovel=51 hivel=56 pitch_keycenter=81 
+<region> sample=ogg\A5v8.ogg lokey=80 hikey=82 lovel=57 hivel=64 pitch_keycenter=81 
+<region> sample=ogg\A5v9.ogg lokey=80 hikey=82 lovel=65 hivel=72 pitch_keycenter=81
+<region> sample=ogg\A5v10.ogg lokey=80 hikey=82 lovel=73 hivel=80 pitch_keycenter=81 
+<region> sample=ogg\A5v11.ogg lokey=80 hikey=82 lovel=81 hivel=88 pitch_keycenter=81
+<region> sample=ogg\A5v12.ogg lokey=80 hikey=82 lovel=89 hivel=96 pitch_keycenter=81 
+<region> sample=ogg\A5v13.ogg lokey=80 hikey=82 lovel=97 hivel=104 pitch_keycenter=81 
+<region> sample=ogg\A5v14.ogg lokey=80 hikey=82 lovel=105 hivel=112 pitch_keycenter=81 
+<region> sample=ogg\A5v15.ogg lokey=80 hikey=82 lovel=113 hivel=120 pitch_keycenter=81 
+<region> sample=ogg\A5v16.ogg lokey=80 hikey=82 lovel=121 pitch_keycenter=81 
+<region> sample=ogg\C6v1.ogg lokey=83 hikey=85 lovel=1 hivel=26 pitch_keycenter=84 
+<region> sample=ogg\C6v2.ogg lokey=83 hikey=85 lovel=27 hivel=34 pitch_keycenter=84 
+<region> sample=ogg\C6v3.ogg lokey=83 hikey=85 lovel=35 hivel=36 pitch_keycenter=84 
+<region> sample=ogg\C6v4.ogg lokey=83 hikey=85 lovel=37 hivel=43 pitch_keycenter=84 
+<region> sample=ogg\C6v5.ogg lokey=83 hikey=85 lovel=44 hivel=46 pitch_keycenter=84 
+<region> sample=ogg\C6v6.ogg lokey=83 hikey=85 lovel=47 hivel=50 pitch_keycenter=84 
+<region> sample=ogg\C6v7.ogg lokey=83 hikey=85 lovel=51 hivel=56 pitch_keycenter=84 
+<region> sample=ogg\C6v8.ogg lokey=83 hikey=85 lovel=57 hivel=64 pitch_keycenter=84 
+<region> sample=ogg\C6v9.ogg lokey=83 hikey=85 lovel=65 hivel=72 pitch_keycenter=84 
+<region> sample=ogg\C6v10.ogg lokey=83 hikey=85 lovel=73 hivel=80 pitch_keycenter=84 
+<region> sample=ogg\C6v11.ogg lokey=83 hikey=85 lovel=81 hivel=88 pitch_keycenter=84 
+<region> sample=ogg\C6v12.ogg lokey=83 hikey=85 lovel=89 hivel=96 pitch_keycenter=84 
+<region> sample=ogg\C6v13.ogg lokey=83 hikey=85 lovel=97 hivel=104 pitch_keycenter=84 
+<region> sample=ogg\C6v14.ogg lokey=83 hikey=85 lovel=105 hivel=112 pitch_keycenter=84 
+<region> sample=ogg\C6v15.ogg lokey=83 hikey=85 lovel=113 hivel=120 pitch_keycenter=84 
+<region> sample=ogg\C6v16.ogg lokey=83 hikey=85 lovel=121 pitch_keycenter=84 
+<region> sample=ogg\D#6v1.ogg lokey=86 hikey=88 lovel=1 hivel=26 pitch_keycenter=87 
+<region> sample=ogg\D#6v2.ogg lokey=86 hikey=88 lovel=27 hivel=34 pitch_keycenter=87 
+<region> sample=ogg\D#6v3.ogg lokey=86 hikey=88 lovel=35 hivel=36 pitch_keycenter=87 
+<region> sample=ogg\D#6v4.ogg lokey=86 hikey=88 lovel=37 hivel=43 pitch_keycenter=87 
+<region> sample=ogg\D#6v5.ogg lokey=86 hikey=88 lovel=44 hivel=46 pitch_keycenter=87 
+<region> sample=ogg\D#6v6.ogg lokey=86 hikey=88 lovel=47 hivel=50 pitch_keycenter=87 
+<region> sample=ogg\D#6v7.ogg lokey=86 hikey=88 lovel=51 hivel=56 pitch_keycenter=87 
+<region> sample=ogg\D#6v8.ogg lokey=86 hikey=88 lovel=57 hivel=64 pitch_keycenter=87 
+<region> sample=ogg\D#6v9.ogg lokey=86 hikey=88 lovel=65 hivel=72 pitch_keycenter=87 
+<region> sample=ogg\D#6v10.ogg lokey=86 hikey=88 lovel=73 hivel=80 pitch_keycenter=87 
+<region> sample=ogg\D#6v11.ogg lokey=86 hikey=88 lovel=81 hivel=88 pitch_keycenter=87 
+<region> sample=ogg\D#6v12.ogg lokey=86 hikey=88 lovel=89 hivel=96 pitch_keycenter=87 
+<region> sample=ogg\D#6v13.ogg lokey=86 hikey=88 lovel=97 hivel=104 pitch_keycenter=87 
+<region> sample=ogg\D#6v14.ogg lokey=86 hikey=88 lovel=105 hivel=112 pitch_keycenter=87 
+<region> sample=ogg\D#6v15.ogg lokey=86 hikey=88 lovel=113 hivel=120 pitch_keycenter=87 
+<region> sample=ogg\D#6v16.ogg lokey=86 hikey=88 lovel=121 pitch_keycenter=87 
+//========================
+//Notes without dampers
+<group> amp_veltrack=73 ampeg_release=5
+
+<region> sample=ogg\F#6v1.ogg lokey=89 hikey=91 lovel=1 hivel=26 pitch_keycenter=90 
+<region> sample=ogg\F#6v2.ogg lokey=89 hikey=91 lovel=27 hivel=34 pitch_keycenter=90 
+<region> sample=ogg\F#6v3.ogg lokey=89 hikey=91 lovel=35 hivel=36 pitch_keycenter=90 
+<region> sample=ogg\F#6v4.ogg lokey=89 hikey=91 lovel=37 hivel=43 pitch_keycenter=90 
+<region> sample=ogg\F#6v5.ogg lokey=89 hikey=91 lovel=44 hivel=46 pitch_keycenter=90 
+<region> sample=ogg\F#6v6.ogg lokey=89 hikey=91 lovel=47 hivel=50 pitch_keycenter=90 
+<region> sample=ogg\F#6v7.ogg lokey=89 hikey=91 lovel=51 hivel=56 pitch_keycenter=90 
+<region> sample=ogg\F#6v8.ogg lokey=89 hikey=91 lovel=57 hivel=64 pitch_keycenter=90 
+<region> sample=ogg\F#6v9.ogg lokey=89 hikey=91 lovel=65 hivel=72 pitch_keycenter=90 
+<region> sample=ogg\F#6v10.ogg lokey=89 hikey=91 lovel=73 hivel=80 pitch_keycenter=90 
+<region> sample=ogg\F#6v11.ogg lokey=89 hikey=91 lovel=81 hivel=88 pitch_keycenter=90 
+<region> sample=ogg\F#6v12.ogg lokey=89 hikey=91 lovel=89 hivel=96 pitch_keycenter=90 
+<region> sample=ogg\F#6v13.ogg lokey=89 hikey=91 lovel=97 hivel=104 pitch_keycenter=90 
+<region> sample=ogg\F#6v14.ogg lokey=89 hikey=91 lovel=105 hivel=112 pitch_keycenter=90 
+<region> sample=ogg\F#6v15.ogg lokey=89 hikey=91 lovel=113 hivel=120 pitch_keycenter=90 
+<region> sample=ogg\F#6v16.ogg lokey=89 hikey=91 lovel=121 pitch_keycenter=90 
+<region> sample=ogg\A6v1.ogg lokey=92 hikey=94 lovel=1 hivel=26 pitch_keycenter=93 
+<region> sample=ogg\A6v2.ogg lokey=92 hikey=94 lovel=27 hivel=34 pitch_keycenter=93 
+<region> sample=ogg\A6v3.ogg lokey=92 hikey=94 lovel=35 hivel=36 pitch_keycenter=93 
+<region> sample=ogg\A6v4.ogg lokey=92 hikey=94 lovel=37 hivel=43 pitch_keycenter=93 
+<region> sample=ogg\A6v5.ogg lokey=92 hikey=94 lovel=44 hivel=46 pitch_keycenter=93 
+<region> sample=ogg\A6v6.ogg lokey=92 hikey=94 lovel=47 hivel=50 pitch_keycenter=93 
+<region> sample=ogg\A6v7.ogg lokey=92 hikey=94 lovel=51 hivel=56 pitch_keycenter=93 
+<region> sample=ogg\A6v8.ogg lokey=92 hikey=94 lovel=57 hivel=64 pitch_keycenter=93 
+<region> sample=ogg\A6v9.ogg lokey=92 hikey=94 lovel=65 hivel=72 pitch_keycenter=93 
+<region> sample=ogg\A6v10.ogg lokey=92 hikey=94 lovel=73 hivel=80 pitch_keycenter=93 
+<region> sample=ogg\A6v11.ogg lokey=92 hikey=94 lovel=81 hivel=88 pitch_keycenter=93 
+<region> sample=ogg\A6v12.ogg lokey=92 hikey=94 lovel=89 hivel=96 pitch_keycenter=93 
+<region> sample=ogg\A6v13.ogg lokey=92 hikey=94 lovel=97 hivel=104 pitch_keycenter=93 
+<region> sample=ogg\A6v14.ogg lokey=92 hikey=94 lovel=105 hivel=112 pitch_keycenter=93 
+<region> sample=ogg\A6v15.ogg lokey=92 hikey=94 lovel=113 hivel=120 pitch_keycenter=93 
+<region> sample=ogg\A6v16.ogg lokey=92 hikey=94 lovel=121 pitch_keycenter=93 
+<region> sample=ogg\C7v1.ogg lokey=95 hikey=97 lovel=1 hivel=26 pitch_keycenter=96 
+<region> sample=ogg\C7v2.ogg lokey=95 hikey=97 lovel=27 hivel=34 pitch_keycenter=96 
+<region> sample=ogg\C7v3.ogg lokey=95 hikey=97 lovel=35 hivel=36 pitch_keycenter=96 
+<region> sample=ogg\C7v4.ogg lokey=95 hikey=97 lovel=37 hivel=43 pitch_keycenter=96 
+<region> sample=ogg\C7v5.ogg lokey=95 hikey=97 lovel=44 hivel=46 pitch_keycenter=96 
+<region> sample=ogg\C7v6.ogg lokey=95 hikey=97 lovel=47 hivel=50 pitch_keycenter=96 
+<region> sample=ogg\C7v7.ogg lokey=95 hikey=97 lovel=51 hivel=56 pitch_keycenter=96 
+<region> sample=ogg\C7v8.ogg lokey=95 hikey=97 lovel=57 hivel=64 pitch_keycenter=96 
+<region> sample=ogg\C7v9.ogg lokey=95 hikey=97 lovel=65 hivel=72 pitch_keycenter=96 
+<region> sample=ogg\C7v10.ogg lokey=95 hikey=97 lovel=73 hivel=80 pitch_keycenter=96 
+<region> sample=ogg\C7v11.ogg lokey=95 hikey=97 lovel=81 hivel=88 pitch_keycenter=96 
+<region> sample=ogg\C7v12.ogg lokey=95 hikey=97 lovel=89 hivel=96 pitch_keycenter=96 
+<region> sample=ogg\C7v13.ogg lokey=95 hikey=97 lovel=97 hivel=104 pitch_keycenter=96 
+<region> sample=ogg\C7v14.ogg lokey=95 hikey=97 lovel=105 hivel=112 pitch_keycenter=96 
+<region> sample=ogg\C7v15.ogg lokey=95 hikey=97 lovel=113 hivel=120 pitch_keycenter=96 
+<region> sample=ogg\C7v16.ogg lokey=95 hikey=97 lovel=121 pitch_keycenter=96 
+<region> sample=ogg\D#7v1.ogg lokey=98 hikey=100 lovel=1 hivel=26 pitch_keycenter=99 
+<region> sample=ogg\D#7v2.ogg lokey=98 hikey=100 lovel=27 hivel=34 pitch_keycenter=99 
+<region> sample=ogg\D#7v3.ogg lokey=98 hikey=100 lovel=35 hivel=36 pitch_keycenter=99 
+<region> sample=ogg\D#7v4.ogg lokey=98 hikey=100 lovel=37 hivel=43 pitch_keycenter=99 
+<region> sample=ogg\D#7v5.ogg lokey=98 hikey=100 lovel=44 hivel=46 pitch_keycenter=99 
+<region> sample=ogg\D#7v6.ogg lokey=98 hikey=100 lovel=47 hivel=50 pitch_keycenter=99 
+<region> sample=ogg\D#7v7.ogg lokey=98 hikey=100 lovel=51 hivel=56 pitch_keycenter=99 
+<region> sample=ogg\D#7v8.ogg lokey=98 hikey=100 lovel=57 hivel=64 pitch_keycenter=99
+<region> sample=ogg\D#7v9.ogg lokey=98 hikey=100 lovel=65 hivel=72 pitch_keycenter=99  
+<region> sample=ogg\D#7v10.ogg lokey=98 hikey=100 lovel=73 hivel=80 pitch_keycenter=99 
+<region> sample=ogg\D#7v11.ogg lokey=98 hikey=100 lovel=81 hivel=88 pitch_keycenter=99 
+<region> sample=ogg\D#7v12.ogg lokey=98 hikey=100 lovel=89 hivel=96 pitch_keycenter=99 
+<region> sample=ogg\D#7v13.ogg lokey=98 hikey=100 lovel=97 hivel=104 pitch_keycenter=99 
+<region> sample=ogg\D#7v14.ogg lokey=98 hikey=100 lovel=105 hivel=112 pitch_keycenter=99 
+<region> sample=ogg\D#7v15.ogg lokey=98 hikey=100 lovel=113 hivel=120 pitch_keycenter=99 
+<region> sample=ogg\D#7v16.ogg lokey=98 hikey=100 lovel=121 pitch_keycenter=99 
+<region> sample=ogg\F#7v1.ogg lokey=101 hikey=103 lovel=1 hivel=26 pitch_keycenter=102 
+<region> sample=ogg\F#7v2.ogg lokey=101 hikey=103 lovel=27 hivel=34 pitch_keycenter=102 
+<region> sample=ogg\F#7v3.ogg lokey=101 hikey=103 lovel=35 hivel=36 pitch_keycenter=102 
+<region> sample=ogg\F#7v4.ogg lokey=101 hikey=103 lovel=37 hivel=43 pitch_keycenter=102 
+<region> sample=ogg\F#7v5.ogg lokey=101 hikey=103 lovel=44 hivel=46 pitch_keycenter=102 
+<region> sample=ogg\F#7v6.ogg lokey=101 hikey=103 lovel=47 hivel=50 pitch_keycenter=102 
+<region> sample=ogg\F#7v7.ogg lokey=101 hikey=103 lovel=51 hivel=56 pitch_keycenter=102 
+<region> sample=ogg\F#7v8.ogg lokey=101 hikey=103 lovel=57 hivel=64 pitch_keycenter=102 
+<region> sample=ogg\F#7v9.ogg lokey=101 hikey=103 lovel=65 hivel=72 pitch_keycenter=102 
+<region> sample=ogg\F#7v10.ogg lokey=101 hikey=103 lovel=73 hivel=80 pitch_keycenter=102 
+<region> sample=ogg\F#7v11.ogg lokey=101 hikey=103 lovel=81 hivel=88 pitch_keycenter=102 
+<region> sample=ogg\F#7v12.ogg lokey=101 hikey=103 lovel=89 hivel=96 pitch_keycenter=102 
+<region> sample=ogg\F#7v13.ogg lokey=101 hikey=103 lovel=97 hivel=104 pitch_keycenter=102 
+<region> sample=ogg\F#7v14.ogg lokey=101 hikey=103 lovel=105 hivel=112 pitch_keycenter=102 
+<region> sample=ogg\F#7v15.ogg lokey=101 hikey=103 lovel=113 hivel=120 pitch_keycenter=102 
+<region> sample=ogg\F#7v16.ogg lokey=101 hikey=103 lovel=121 pitch_keycenter=102 
+<region> sample=ogg\A7v1.ogg lokey=104 hikey=106 lovel=1 hivel=26 pitch_keycenter=105 
+<region> sample=ogg\A7v2.ogg lokey=104 hikey=106 lovel=27 hivel=34 pitch_keycenter=105 
+<region> sample=ogg\A7v3.ogg lokey=104 hikey=106 lovel=35 hivel=36 pitch_keycenter=105 
+<region> sample=ogg\A7v4.ogg lokey=104 hikey=106 lovel=37 hivel=43 pitch_keycenter=105 
+<region> sample=ogg\A7v5.ogg lokey=104 hikey=106 lovel=44 hivel=46 pitch_keycenter=105 
+<region> sample=ogg\A7v6.ogg lokey=104 hikey=106 lovel=47 hivel=50 pitch_keycenter=105 
+<region> sample=ogg\A7v7.ogg lokey=104 hikey=106 lovel=51 hivel=56 pitch_keycenter=105 
+<region> sample=ogg\A7v8.ogg lokey=104 hikey=106 lovel=57 hivel=64 pitch_keycenter=105 
+<region> sample=ogg\A7v9.ogg lokey=104 hikey=106 lovel=65 hivel=72 pitch_keycenter=105 
+<region> sample=ogg\A7v10.ogg lokey=104 hikey=106 lovel=73 hivel=80 pitch_keycenter=105 
+<region> sample=ogg\A7v11.ogg lokey=104 hikey=106 lovel=81 hivel=88 pitch_keycenter=105 
+<region> sample=ogg\A7v12.ogg lokey=104 hikey=106 lovel=89 hivel=96 pitch_keycenter=105 
+<region> sample=ogg\A7v13.ogg lokey=104 hikey=106 lovel=97 hivel=104 pitch_keycenter=105 
+<region> sample=ogg\A7v14.ogg lokey=104 hikey=106 lovel=105 hivel=112 pitch_keycenter=105 
+<region> sample=ogg\A7v15.ogg lokey=104 hikey=106 lovel=113 hivel=120 pitch_keycenter=105 
+<region> sample=ogg\A7v16.ogg lokey=104 hikey=106 lovel=121 pitch_keycenter=105 
+<region> sample=ogg\C8v1.ogg lokey=107 hikey=108 lovel=1 hivel=26 pitch_keycenter=108 
+<region> sample=ogg\C8v2.ogg lokey=107 hikey=108 lovel=27 hivel=34 pitch_keycenter=108 
+<region> sample=ogg\C8v3.ogg lokey=107 hikey=108 lovel=35 hivel=36 pitch_keycenter=108 
+<region> sample=ogg\C8v4.ogg lokey=107 hikey=108 lovel=37 hivel=43 pitch_keycenter=108 
+<region> sample=ogg\C8v5.ogg lokey=107 hikey=108 lovel=44 hivel=46 pitch_keycenter=108 
+<region> sample=ogg\C8v6.ogg lokey=107 hikey=108 lovel=47 hivel=50 pitch_keycenter=108 
+<region> sample=ogg\C8v7.ogg lokey=107 hikey=108 lovel=51 hivel=56 pitch_keycenter=108 
+<region> sample=ogg\C8v8.ogg lokey=107 hikey=108 lovel=57 hivel=64 pitch_keycenter=108 
+<region> sample=ogg\C8v9.ogg lokey=107 hikey=108 lovel=65 hivel=72 pitch_keycenter=108 
+<region> sample=ogg\C8v10.ogg lokey=107 hikey=108 lovel=73 hivel=80 pitch_keycenter=108 
+<region> sample=ogg\C8v11.ogg lokey=107 hikey=108 lovel=81 hivel=88 pitch_keycenter=108 
+<region> sample=ogg\C8v12.ogg lokey=107 hikey=108 lovel=89 hivel=96 pitch_keycenter=108 
+<region> sample=ogg\C8v13.ogg lokey=107 hikey=108 lovel=97 hivel=104 pitch_keycenter=108 
+<region> sample=ogg\C8v14.ogg lokey=107 hikey=108 lovel=105 hivel=112 pitch_keycenter=108 
+<region> sample=ogg\C8v15.ogg lokey=107 hikey=108 lovel=113 hivel=120 pitch_keycenter=108 
+<region> sample=ogg\C8v16.ogg lokey=107 hikey=108 lovel=121 pitch_keycenter=108 
+//Release string resonances
+<group> trigger=release volume=-4 amp_veltrack=94 rt_decay=6
+
+<region> sample=ogg\harmLA0.ogg lokey=20 hikey=22 lovel=45 pitch_keycenter=21 
+<region> sample=ogg\harmLC1.ogg lokey=23 hikey=25 lovel=45 pitch_keycenter=24 
+<region> sample=ogg\harmLD#1.ogg lokey=26 hikey=28 lovel=45 pitch_keycenter=27 
+//========================
+<group> trigger=release volume=-4 amp_veltrack=94 rt_decay=7
+
+<region> sample=ogg\harmLF#1.ogg lokey=29 hikey=31 lovel=45 pitch_keycenter=30 
+<region> sample=ogg\harmLA1.ogg lokey=32 hikey=34 lovel=45 pitch_keycenter=33 
+<region> sample=ogg\harmLC2.ogg lokey=35 hikey=37 lovel=45 pitch_keycenter=36 
+//========================
+<group> trigger=release volume=-4 amp_veltrack=90 rt_decay=8 
+
+<region> sample=ogg\harmLD#2.ogg lokey=38 hikey=40 lovel=45 pitch_keycenter=39 
+<region> sample=ogg\harmLF#2.ogg lokey=41 hikey=43 lovel=45 pitch_keycenter=42 
+<region> sample=ogg\harmLA2.ogg lokey=44 hikey=46 lovel=45 pitch_keycenter=45 
+<region> sample=ogg\harmLC3.ogg lokey=47 hikey=49 lovel=45 pitch_keycenter=48 
+//========================
+<group> trigger=release volume=-4 amp_veltrack=90 rt_decay=9
+
+<region> sample=ogg\harmLD#3.ogg lokey=50 hikey=52 lovel=45 pitch_keycenter=51 
+<region> sample=ogg\harmLF#3.ogg lokey=53 hikey=55 lovel=45 pitch_keycenter=54 
+<region> sample=ogg\harmLA3.ogg lokey=56 hikey=58 lovel=45 pitch_keycenter=57 
+<region> sample=ogg\harmLC4.ogg lokey=59 hikey=61 lovel=45
+<region> sample=ogg\harmLD#4.ogg lokey=62 hikey=64 lovel=45 pitch_keycenter=63 
+<region> sample=ogg\harmLF#4.ogg lokey=65 hikey=67 lovel=45 pitch_keycenter=66 
+<region> sample=ogg\harmLA4.ogg lokey=68 hikey=70 lovel=45 pitch_keycenter=69 
+<region> sample=ogg\harmLC5.ogg lokey=71 hikey=73 lovel=45 pitch_keycenter=72 
+<region> sample=ogg\harmLD#5.ogg lokey=74 hikey=76 lovel=45 pitch_keycenter=75 
+<region> sample=ogg\harmLF#5.ogg lokey=77 hikey=79 lovel=45 pitch_keycenter=78 
+<region> sample=ogg\harmLA5.ogg lokey=80 hikey=82 lovel=45 pitch_keycenter=81 
+<region> sample=ogg\harmLC6.ogg lokey=83 hikey=85 lovel=45 pitch_keycenter=84 
+<region> sample=ogg\harmLD#6.ogg lokey=86 hikey=88 lovel=45 pitch_keycenter=87 
+//========================
+<group> trigger=release amp_veltrack=95 rt_decay=7
+
+<region> sample=ogg\harmSA0.ogg lokey=20 hikey=22 hivel=44 pitch_keycenter=21 
+<region> sample=ogg\harmSC1.ogg lokey=23 hikey=25 hivel=44 pitch_keycenter=24 
+<region> sample=ogg\harmSD#1.ogg lokey=26 hikey=28 hivel=44 pitch_keycenter=27 
+<region> sample=ogg\harmSF#1.ogg lokey=29 hikey=31 hivel=44 pitch_keycenter=30 
+<region> sample=ogg\harmSA1.ogg lokey=32 hikey=34 hivel=44 pitch_keycenter=33 
+<region> sample=ogg\harmSC2.ogg lokey=35 hikey=37 hivel=44 pitch_keycenter=36 
+<region> sample=ogg\harmSD#2.ogg lokey=38 hikey=40 hivel=44 pitch_keycenter=39 
+<region> sample=ogg\harmSF#2.ogg lokey=41 hikey=43 hivel=44 pitch_keycenter=42 
+//=======================
+<group> trigger=release amp_veltrack=90 rt_decay=7
+
+<region> sample=ogg\harmSA2.ogg lokey=44 hikey=46 hivel=44 pitch_keycenter=45 
+<region> sample=ogg\harmSC3.ogg lokey=47 hikey=49 hivel=44 pitch_keycenter=48 
+<region> sample=ogg\harmSD#3.ogg lokey=50 hikey=52 hivel=44 pitch_keycenter=51 
+<region> sample=ogg\harmSF#3.ogg lokey=53 hikey=55 hivel=44 pitch_keycenter=54 
+<region> sample=ogg\harmSA3.ogg lokey=56 hikey=58 hivel=44 pitch_keycenter=57 
+<region> sample=ogg\harmSC4.ogg lokey=59 hikey=61 hivel=44 
+<region> sample=ogg\harmSD#4.ogg lokey=62 hikey=64 hivel=44 pitch_keycenter=63 
+<region> sample=ogg\harmSF#4.ogg lokey=65 hikey=67 hivel=44 pitch_keycenter=66 
+<region> sample=ogg\harmSA4.ogg lokey=68 hikey=70 hivel=44 pitch_keycenter=69 
+<region> sample=ogg\harmSC5.ogg lokey=71 hikey=73 hivel=44 pitch_keycenter=72 
+<region> sample=ogg\harmSD#5.ogg lokey=74 hikey=76 hivel=44 pitch_keycenter=75 
+<region> sample=ogg\harmSF#5.ogg lokey=77 hikey=79 hivel=44 pitch_keycenter=78 
+<region> sample=ogg\harmSA5.ogg lokey=80 hikey=82 hivel=44 pitch_keycenter=81 
+<region> sample=ogg\harmSC6.ogg lokey=83 hikey=85 hivel=44 pitch_keycenter=84 
+<region> sample=ogg\harmSD#6.ogg lokey=86 hikey=88 hivel=44 pitch_keycenter=87 
+//========================
+<group> trigger=release amp_veltrack=96 rt_decay=2
+
+<region> sample=ogg\harmV3A0.ogg lokey=20 hikey=22 pitch_keycenter=21 
+<region> sample=ogg\harmV3C1.ogg lokey=23 hikey=25 pitch_keycenter=24 
+<region> sample=ogg\harmV3D#1.ogg lokey=26 hikey=28 pitch_keycenter=27 
+<region> sample=ogg\harmV3F#1.ogg lokey=29 hikey=31 pitch_keycenter=30 
+<region> sample=ogg\harmV3A1.ogg lokey=32 hikey=34 pitch_keycenter=33 
+<region> sample=ogg\harmV3C2.ogg lokey=35 hikey=37 pitch_keycenter=36 
+<region> sample=ogg\harmV3D#2.ogg lokey=38 hikey=40 pitch_keycenter=39 
+<region> sample=ogg\harmV3F#2.ogg lokey=41 hikey=43 pitch_keycenter=42 
+<region> sample=ogg\harmV3A2.ogg lokey=44 hikey=46 pitch_keycenter=45 
+<region> sample=ogg\harmV3C3.ogg lokey=47 hikey=49 pitch_keycenter=48 
+<region> sample=ogg\harmV3D#3.ogg lokey=50 hikey=52 pitch_keycenter=51 
+<region> sample=ogg\harmV3F#3.ogg lokey=53 hikey=55 pitch_keycenter=54 
+<region> sample=ogg\harmV3A3.ogg lokey=56 hikey=58 pitch_keycenter=57 
+<region> sample=ogg\harmV3C4.ogg lokey=59 hikey=61 
+<region> sample=ogg\harmV3D#4.ogg lokey=62 hikey=64 pitch_keycenter=63 
+<region> sample=ogg\harmV3F#4.ogg lokey=65 hikey=67 pitch_keycenter=66 
+<region> sample=ogg\harmV3A4.ogg lokey=68 hikey=70 pitch_keycenter=69 
+<region> sample=ogg\harmV3C5.ogg lokey=71 hikey=73 pitch_keycenter=72 
+<region> sample=ogg\harmV3D#5.ogg lokey=74 hikey=76 pitch_keycenter=75 
+<region> sample=ogg\harmV3F#5.ogg lokey=77 hikey=79 pitch_keycenter=78 
+<region> sample=ogg\harmV3A5.ogg lokey=80 hikey=82 pitch_keycenter=81 
+<region> sample=ogg\harmV3C6.ogg lokey=83 hikey=85 pitch_keycenter=84 
+<region> sample=ogg\harmV3D#6.ogg lokey=86 hikey=88 pitch_keycenter=87 
+//======================
+//HammerNoise
+<group> trigger=release pitch_keytrack=0 volume=-37 amp_veltrack=82 rt_decay=2
+
+<region> sample=ogg\rel1.ogg lokey=21 hikey=21
+<region> sample=ogg\rel2.ogg lokey=22 hikey=22 
+<region> sample=ogg\rel3.ogg lokey=23 hikey=23 
+<region> sample=ogg\rel4.ogg lokey=24 hikey=24 
+<region> sample=ogg\rel5.ogg lokey=25 hikey=25 
+<region> sample=ogg\rel6.ogg lokey=26 hikey=26 
+<region> sample=ogg\rel7.ogg lokey=27 hikey=27 
+<region> sample=ogg\rel8.ogg lokey=28 hikey=28 
+<region> sample=ogg\rel9.ogg lokey=29 hikey=29    
+<region> sample=ogg\rel10.ogg lokey=30 hikey=30 
+<region> sample=ogg\rel11.ogg lokey=31 hikey=31 
+<region> sample=ogg\rel12.ogg lokey=32 hikey=32 
+<region> sample=ogg\rel13.ogg lokey=33 hikey=33 
+<region> sample=ogg\rel14.ogg lokey=34 hikey=34 
+<region> sample=ogg\rel15.ogg lokey=35 hikey=35 
+<region> sample=ogg\rel16.ogg lokey=36 hikey=36 
+<region> sample=ogg\rel17.ogg lokey=37 hikey=37 
+<region> sample=ogg\rel18.ogg lokey=38 hikey=38 
+<region> sample=ogg\rel19.ogg lokey=39 hikey=39 
+<region> sample=ogg\rel20.ogg lokey=40 hikey=40 
+<region> sample=ogg\rel21.ogg lokey=41 hikey=41 
+<region> sample=ogg\rel22.ogg lokey=42 hikey=42 
+<region> sample=ogg\rel23.ogg lokey=43 hikey=43 
+<region> sample=ogg\rel24.ogg lokey=44 hikey=44 
+<region> sample=ogg\rel25.ogg lokey=45 hikey=45 
+<region> sample=ogg\rel26.ogg lokey=46 hikey=46 
+<region> sample=ogg\rel27.ogg lokey=47 hikey=47 
+<region> sample=ogg\rel28.ogg lokey=48 hikey=48 
+<region> sample=ogg\rel29.ogg lokey=49 hikey=49
+<region> sample=ogg\rel30.ogg lokey=50 hikey=50 
+<region> sample=ogg\rel31.ogg lokey=51 hikey=51 
+<region> sample=ogg\rel32.ogg lokey=52 hikey=52 
+<region> sample=ogg\rel33.ogg lokey=53 hikey=53 
+<region> sample=ogg\rel34.ogg lokey=54 hikey=54 
+<region> sample=ogg\rel35.ogg lokey=55 hikey=55 
+<region> sample=ogg\rel36.ogg lokey=56 hikey=56 
+<region> sample=ogg\rel37.ogg lokey=57 hikey=57 
+<region> sample=ogg\rel38.ogg lokey=58 hikey=58 
+<region> sample=ogg\rel39.ogg lokey=59 hikey=59
+<region> sample=ogg\rel40.ogg lokey=60 hikey=60 
+<region> sample=ogg\rel41.ogg lokey=61 hikey=61 
+<region> sample=ogg\rel42.ogg lokey=62 hikey=62 
+<region> sample=ogg\rel43.ogg lokey=63 hikey=63 
+<region> sample=ogg\rel44.ogg lokey=64 hikey=64 
+<region> sample=ogg\rel45.ogg lokey=65 hikey=65 
+<region> sample=ogg\rel46.ogg lokey=66 hikey=66 
+<region> sample=ogg\rel47.ogg lokey=67 hikey=67 
+<region> sample=ogg\rel48.ogg lokey=68 hikey=68 
+<region> sample=ogg\rel49.ogg lokey=69 hikey=69
+<region> sample=ogg\rel50.ogg lokey=70 hikey=70 
+<region> sample=ogg\rel51.ogg lokey=71 hikey=71 
+<region> sample=ogg\rel52.ogg lokey=72 hikey=72 
+<region> sample=ogg\rel53.ogg lokey=73 hikey=73 
+<region> sample=ogg\rel54.ogg lokey=74 hikey=74 
+<region> sample=ogg\rel55.ogg lokey=75 hikey=75 
+<region> sample=ogg\rel56.ogg lokey=76 hikey=76 
+<region> sample=ogg\rel57.ogg lokey=77 hikey=77 
+<region> sample=ogg\rel58.ogg lokey=78 hikey=78 
+<region> sample=ogg\rel59.ogg lokey=79 hikey=79 
+<region> sample=ogg\rel60.ogg lokey=80 hikey=80     
+<region> sample=ogg\rel61.ogg lokey=81 hikey=81
+<region> sample=ogg\rel62.ogg lokey=82 hikey=82 
+<region> sample=ogg\rel63.ogg lokey=83 hikey=83 
+<region> sample=ogg\rel64.ogg lokey=84 hikey=84 
+<region> sample=ogg\rel65.ogg lokey=85 hikey=85 
+<region> sample=ogg\rel66.ogg lokey=86 hikey=86 
+<region> sample=ogg\rel67.ogg lokey=87 hikey=87 
+<region> sample=ogg\rel68.ogg lokey=88 hikey=88 
+<region> sample=ogg\rel69.ogg lokey=89 hikey=89
+<region> sample=ogg\rel70.ogg lokey=90 hikey=90 
+<region> sample=ogg\rel71.ogg lokey=91 hikey=91 
+<region> sample=ogg\rel72.ogg lokey=92 hikey=92 
+<region> sample=ogg\rel73.ogg lokey=93 hikey=93 
+<region> sample=ogg\rel74.ogg lokey=94 hikey=94 
+<region> sample=ogg\rel75.ogg lokey=95 hikey=95 
+<region> sample=ogg\rel76.ogg lokey=96 hikey=96 
+<region> sample=ogg\rel77.ogg lokey=97 hikey=97 
+<region> sample=ogg\rel78.ogg lokey=98 hikey=98 
+<region> sample=ogg\rel79.ogg lokey=99 hikey=99
+<region> sample=ogg\rel80.ogg lokey=100 hikey=100 
+<region> sample=ogg\rel81.ogg lokey=101 hikey=101 
+<region> sample=ogg\rel82.ogg lokey=102 hikey=102 
+<region> sample=ogg\rel83.ogg lokey=103 hikey=103 
+<region> sample=ogg\rel84.ogg lokey=104 hikey=104 
+<region> sample=ogg\rel85.ogg lokey=105 hikey=105 
+<region> sample=ogg\rel86.ogg lokey=106 hikey=106 
+<region> sample=ogg\rel87.ogg lokey=107 hikey=107 
+<region> sample=ogg\rel88.ogg lokey=108 hikey=108
+//======================
+//pedalAction
+
+<group> group=1 hikey=-1 lokey=-1 on_locc64=126 on_hicc64=127 off_by=2 volume=-20
+
+<region> sample=ogg\pedalD1.ogg lorand=0 hirand=0.5
+<region> sample=ogg\pedalD2.ogg lorand=0.5 hirand=1
+
+<group> group=2 hikey=-1 lokey=-1 on_locc64=0 on_hicc64=1 volume=-19
+
+<region> sample=ogg\pedalU1.ogg lorand=0 hirand=0.5
+<region> sample=ogg\pedalU2.ogg lorand=0.5 hirand=1

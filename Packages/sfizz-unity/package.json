@@ -20,5 +20,12 @@
   "author": {
     "name": "f1yingbanana",
     "url": "https://flyblog.antigear.dev"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Piano",
+      "description": "A keyboard piano showcasing SfizzPlayer. Requires Unity.InputManager.",
+      "path": "Samples~/Piano"
+    }
+  ]
 }
