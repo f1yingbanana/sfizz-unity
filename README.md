@@ -13,7 +13,7 @@ Unity 2018.4.0 or later versions. Works on:
 * iOS
 
 ## :control_knobs: Installation
-The package is available on the [openupm registry](https://openupm.com/). You can install it via [openupm-cli](https://github.com/openupm/openupm-cli):
+The package is available on the [openupm registry](https://openupm.com/packages/dev.f1yingbanana.sfizz-unity/).
 ```
 openupm add dev.f1yingbanana.sfizz-unity
 ```
@@ -21,6 +21,7 @@ You can also install this [via Unity Package Manager](https://docs.unity3d.com/M
 ```
 https://github.com/f1yingbanana/sfizz-unity.git#upm
 ```
+An Asset Store package is in the works.
 
 ## :notes: Getting Started
 ### <a name="getting-sfizz"></a> :microphone: Getting sfizz
