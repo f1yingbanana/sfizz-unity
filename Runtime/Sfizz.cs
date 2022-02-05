@@ -1,6 +1,6 @@
 using System;
-using System.Diagnostics;
 using System.Runtime.InteropServices;
+using UnityEngine.Assertions;
 
 namespace F1yingBanana.SfizzUnity {
   /// <summary>
@@ -24,7 +24,37 @@ namespace F1yingBanana.SfizzUnity {
     /// <summary>
     /// Index out of bound error for the requested CC/key label.
     /// </summary>
-    public const int OUT_OF_BOUNDS_LABEL_INDEX = -1;
+    public const int OutOfBoundsLabelIndex = -1;
+
+    /// <summary>
+    /// Copied from sfizz/Config.h. Defines the max sample rate of the output. Sfizz crashes with
+    /// out of bound values, so for safety we do boundary checking ourselves.
+    /// </summary>
+    public const int MaxSampleRate = 192000;
+
+    /// <summary>
+    /// Copied from sfizz/Config.h. Defines the maximum size of a block. Sfizz crashes with out of
+    /// bound values, so for safety we do boundary checking ourselves.
+    /// </summary>
+    public const int MaxBlockSize = 8192;
+
+    /// <summary>
+    /// Copied from sfizz/Config.h. Defines the maximum size of a block. Sfizz crashes with out of
+    /// bound values, so for safety we do boundary checking ourselves.
+    /// </summary>
+    public const int MaxNumVoices = 128;
+
+    /// <summary>
+    /// Copied from sfizz/Config.h. Defines the maximum value for a cc. Sfizz crashes with out of
+    /// bound values, so for safety we do boundary checking ourselves.
+    /// </summary>
+    public const int NumCCs = 128;
+
+    /// <summary>
+    /// Copied from sfizz/Config.h. Defines the maximum number of output channels in the buffer.
+    /// Sfizz crashes with out of bound values, so for safety we do boundary checking ourselves.
+    /// </summary>
+    public const int MaxChannels = 32;
 
     /// <summary>
     /// Creates a new instance of Sfizz for audio processing.
@@ -51,182 +81,217 @@ namespace F1yingBanana.SfizzUnity {
     /// in the build, and persistentDataPath for Android, WebGL downloaded assets.
     /// </summary>
     public bool LoadFile(string path) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_load_file(nativePtr, path);
     }
 
     public bool LoadString(string path, string text) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_load_string(nativePtr, path, text);
     }
 
     public bool LoadScalaFile(string path) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_load_scala_file(nativePtr, path);
     }
 
     public bool LoadScalaString(string text) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_load_scala_string(nativePtr, text);
     }
 
     public void SetScalaRootKey(int rootKey) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       sfizz_set_scala_root_key(nativePtr, rootKey);
     }
 
     public int GetScalaRootKey() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_scala_root_key(nativePtr);
     }
 
     public void SetTuningFrequency(float frequency) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       sfizz_set_tuning_frequency(nativePtr, frequency);
     }
 
     public float GetTuningFrequency() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_tuning_frequency(nativePtr);
     }
 
     public void LoadStretchTuningByRatio(float ratio) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       sfizz_load_stretch_tuning_by_ratio(nativePtr, ratio);
     }
 
     public int GetNumRegions() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_num_regions(nativePtr);
     }
 
     public int GetNumGroups() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_num_groups(nativePtr);
     }
 
     public int GetNumMasters() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_num_masters(nativePtr);
     }
 
     public int GetNumCurves() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_num_curves(nativePtr);
     }
 
     public string ExportMidnam(string model) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_export_midnam(nativePtr, model);
     }
 
     public int GetNumPreloadedSamples() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_num_preloaded_samples(nativePtr);
     }
 
     public int GetNumActiveVoices() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_num_active_voices(nativePtr);
     }
 
     public void SetSamplesPerBlock(int samplesPerBlock) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 < samplesPerBlock && samplesPerBlock <= MaxBlockSize);
+      blockSize = samplesPerBlock;
       sfizz_set_samples_per_block(nativePtr, samplesPerBlock);
     }
 
     public void SetSampleRate(float sampleRate) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 < sampleRate && sampleRate <= MaxSampleRate);
       sfizz_set_sample_rate(nativePtr, sampleRate);
     }
 
     public void SendNoteOn(int delay, int noteNumber, int velocity) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
+      Assert.IsTrue(0 <= noteNumber && noteNumber < 128);
       sfizz_send_note_on(nativePtr, delay, noteNumber, velocity);
     }
 
     public void SendHDNoteOn(int delay, int noteNumber, float velocity) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
+      Assert.IsTrue(0 <= noteNumber && noteNumber < 128);
       sfizz_send_hd_note_on(nativePtr, delay, noteNumber, velocity);
     }
 
     public void SendNoteOff(int delay, int noteNumber, int velocity) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
+      Assert.IsTrue(0 <= noteNumber && noteNumber < 128);
       sfizz_send_note_off(nativePtr, delay, noteNumber, velocity);
     }
 
     public void SendHDNoteOff(int delay, int noteNumber, float velocity) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
+      Assert.IsTrue(0 <= noteNumber && noteNumber < 128);
       sfizz_send_hd_note_off(nativePtr, delay, noteNumber, velocity);
     }
 
     public void SendCC(int delay, int ccNumber, int ccValue) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
+      Assert.IsTrue(0 <= ccNumber && ccNumber < NumCCs);
       sfizz_send_cc(nativePtr, delay, ccNumber, ccValue);
     }
 
     public void SendHDCC(int delay, int ccNumber, float normValue) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
+      Assert.IsTrue(0 <= ccNumber && ccNumber < NumCCs);
       sfizz_send_hdcc(nativePtr, delay, ccNumber, normValue);
     }
 
     public void SendProgramChange(int delay, int program) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
       sfizz_send_program_change(nativePtr, delay, program);
     }
 
     public void AutomateHDCC(int delay, int ccNumber, float normValue) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
+      Assert.IsTrue(0 <= ccNumber && ccNumber < NumCCs);
       sfizz_automate_hdcc(nativePtr, delay, ccNumber, normValue);
     }
 
     public void SendPitchWheel(int delay, int pitch) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
       sfizz_send_pitch_wheel(nativePtr, delay, pitch);
     }
 
     public void SendHDPitchWheel(int delay, float pitch) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
       sfizz_send_hd_pitch_wheel(nativePtr, delay, pitch);
     }
 
     public void SendChannelAftertouch(int delay, int aftertouch) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
       sfizz_send_channel_aftertouch(nativePtr, delay, aftertouch);
     }
 
     public void SendHDChannelAftertouch(int delay, float aftertouch) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
       sfizz_send_hd_channel_aftertouch(nativePtr, delay, aftertouch);
     }
 
     public void SendPolyAftertouch(int delay, int noteNumber, int aftertouch) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
+      Assert.IsTrue(0 <= noteNumber && noteNumber < 128);
       sfizz_send_poly_aftertouch(nativePtr, delay, noteNumber, aftertouch);
     }
 
     public void SendHDPolyAftertouch(int delay, int noteNumber, float aftertouch) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
+      Assert.IsTrue(0 <= noteNumber && noteNumber < 128);
       sfizz_send_hd_poly_aftertouch(nativePtr, delay, noteNumber, aftertouch);
     }
 
     public void SendBpmTempo(int delay, float beatsPerMinute) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
+      Assert.IsTrue(0 < beatsPerMinute);
       sfizz_send_bpm_tempo(nativePtr, delay, beatsPerMinute);
     }
 
     public void SendTimeSignature(int delay, int beatsPerBar, int beatUnit) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
+      Assert.IsTrue(0 < beatsPerBar);
+      Assert.IsTrue(0 < beatUnit);
       sfizz_send_time_signature(nativePtr, delay, beatsPerBar, beatUnit);
     }
 
     public void SendTimePosition(int delay, int bar, double barBeat) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
+      Assert.IsTrue(0 <= bar);
+      Assert.IsTrue(0 <= barBeat);
       sfizz_send_time_position(nativePtr, delay, bar, barBeat);
     }
 
     public void SendPlaybackState(int delay, int playbackState) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= delay && delay <= blockSize);
       sfizz_send_playback_state(nativePtr, delay, playbackState);
     }
 
@@ -240,15 +305,23 @@ namespace F1yingBanana.SfizzUnity {
     /// The number of channels in the buffer, must be multiples of 2 (stereo).
     /// </param>
     /// <param name="numFrames">
-    /// The number of frames in the buffer. Behavior is undefined if this exceeds the number set in
-    /// <see cref="SetSamplesPerBlock(int)"/>.
-    /// </param>
+    /// The number of frames to render. Must be smaller than samples per
+    /// block.</param>
     public void RenderBlock(float[][] buffer, int numChannels, int numFrames) {
-      Debug.Assert(initialized);
-      Debug.Assert(numChannels % 2 == 0);
-      Debug.Assert(numChannels > 0);
-      Debug.Assert(numFrames > 0);
-      Debug.Assert(buffer.Length == numChannels);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(buffer.Length == numChannels);
+
+      for (int i = 0; i < numChannels; i++) {
+        Assert.IsTrue(buffer[i].Length >= blockSize);
+      }
+
+      Assert.IsTrue(numChannels % 2 == 0 && 0 < numChannels && numChannels < MaxChannels);
+      Assert.IsTrue(numFrames >= 0);
+
+      // Nothing to render.
+      if (numFrames == 0) {
+        return;
+      }
 
       // The renderBlock method takes in a list of pointers to float arrays, one for each channel.
       // We therefore need to pin each channel separately and creates an overall address array.
@@ -272,147 +345,149 @@ namespace F1yingBanana.SfizzUnity {
     }
 
     public int GetPreloadSize() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_preload_size(nativePtr);
     }
 
     public void SetPreloadSize(int preloadSize) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 <= preloadSize);
       sfizz_set_preload_size(nativePtr, preloadSize);
     }
 
     public OversamplingFactor GetOversamplingFactor() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_oversampling_factor(nativePtr);
     }
 
     public bool SetOversamplingFactor(OversamplingFactor oversampling) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_set_oversampling_factor(nativePtr, oversampling);
     }
 
     public int GetSampleQuality(ProcessMode mode) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_sample_quality(nativePtr, mode);
     }
 
     public void SetSampleQuality(ProcessMode mode, int quality) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       sfizz_set_sample_quality(nativePtr, mode, quality);
     }
 
     public int GetOscillatorQuality(ProcessMode mode) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_oscillator_quality(nativePtr, mode);
     }
 
     public void SetOscillatorQuality(ProcessMode mode, int quality) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       sfizz_set_oscillator_quality(nativePtr, mode, quality);
     }
 
     public void SetSustainCancelsRelease(bool value) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       sfizz_set_sustain_cancels_release(nativePtr, value);
     }
 
     public void SetVolume(float volume) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       sfizz_set_volume(nativePtr, volume);
     }
 
     public float GetVolume() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_volume(nativePtr);
     }
 
     public void SetNumVoices(int numVoices) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
+      Assert.IsTrue(0 < numVoices && numVoices <= MaxNumVoices);
       sfizz_set_num_voices(nativePtr, numVoices);
     }
 
     public int GetNumVoices() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_num_voices(nativePtr);
     }
 
     public int GetNumBuffers() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_num_buffers(nativePtr);
     }
 
     public int GetNumBytes() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_num_bytes(nativePtr);
     }
 
     public void EnableFreewheeling() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       sfizz_enable_freewheeling(nativePtr);
     }
 
     public void DisableFreewheeling() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       sfizz_disable_freewheeling(nativePtr);
     }
 
     public string GetUnknownOpcodes() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_unknown_opcodes(nativePtr);
     }
 
     public bool ShouldReloadFile() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_should_reload_file(nativePtr);
     }
 
     public bool ShouldReloadScala() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_should_reload_scala(nativePtr);
     }
 
     public void AllSoundOff() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       sfizz_all_sound_off(nativePtr);
     }
 
     public void AddExternalDefinitions(string id, string value) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       sfizz_add_external_definitions(nativePtr, id, value);
     }
 
     public void ClearExternalDefinitions() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       sfizz_clear_external_definitions(nativePtr);
     }
 
     public int GetNumKeyLabels() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_num_key_labels(nativePtr);
     }
 
     public int GetKeyLabelNumber(int labelIndex) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_key_label_number(nativePtr, labelIndex);
     }
 
     public string GetKeyLabelText(int labelIndex) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_key_label_text(nativePtr, labelIndex);
     }
 
     public int GetNumCCLabels() {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_num_cc_labels(nativePtr);
     }
 
     public int GetCCLabelNumber(int labelIndex) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_cc_label_number(nativePtr, labelIndex);
     }
 
     public string GetCCLabelText(int labelIndex) {
-      Debug.Assert(initialized);
+      Assert.IsTrue(initialized);
       return sfizz_get_cc_label_text(nativePtr, labelIndex);
     }
 #region Implementation
@@ -934,6 +1009,12 @@ namespace F1yingBanana.SfizzUnity {
     /// Whether the object has been initialized. Prevents multiple <see cref="Dispose"/> calls.
     /// </summary>
     private bool initialized;
+
+    /// <summary>
+    /// Keep track of this so we don't pass in invalid numbers to Sfizz, which will result in seg
+    /// faults.
+    /// </summary>
+    private int blockSize = 1024;
 #endregion
   }
 }
