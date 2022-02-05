@@ -153,7 +153,8 @@ namespace F1yingBanana.SfizzUnity {
 
       // Buffer size is directly related to the sample rate, as we are streaming it. We ensure that
       // it never overflows.
-      bufferSize = Mathf.CeilToInt(Time.maximumDeltaTime * SampleRate);
+      bufferSize =
+          Mathf.Min(Mathf.CeilToInt(Time.maximumDeltaTime * SampleRate), Sfizz.MaxBlockSize);
       buffer = new float [Channels][];
 
       for (int i = 0; i < Channels; i++) {
