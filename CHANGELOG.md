@@ -1,3 +1,17 @@
+# [1.2.0](https://github.com/f1yingbanana/sfizz-unity/compare/1.1.0...1.2.0) (2022-02-09)
+
+
+### Bug Fixes
+
+* add assertions so Sfizz logs an error instead of crashing Unity ([fde8076](https://github.com/f1yingbanana/sfizz-unity/commit/fde8076f1917d4a29754edf0ab90f97266c3f54e))
+* SfizzPlayer samples generated per frame no longer exceeds current buffer size ([baeed55](https://github.com/f1yingbanana/sfizz-unity/commit/baeed55326fb5e75f901fffd7365b0b84c3e1189))
+
+
+### Features
+
+* add a MIDI file renderer that is capable of converting MIDI files to  AudioClips ([f871204](https://github.com/f1yingbanana/sfizz-unity/commit/f871204d2327fa33bd402f9d3350be00ffc8639e))
+* add a MIDI player sample that showcases SfizzMidiRenderer ([e3e9795](https://github.com/f1yingbanana/sfizz-unity/commit/e3e9795af3ac57ea4b3e229645ff783f66f9a273))
+
 # [1.1.0](https://github.com/f1yingbanana/sfizz-unity/compare/1.0.0...1.1.0) (2022-02-04)
 
 
