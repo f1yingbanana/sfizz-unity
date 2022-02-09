@@ -31,18 +31,29 @@ namespace F1yingBanana.SfizzUnity.Piano {
         return;
       }
 
-#if UNITY_EDITOR
-      // Note that this will NOT work outside the Unity editor, due to how Unity removes directory
-      // structure of assets in builds, even if we are saving the path instead of getting it
-      // dynamically with AssetDatabase. In your own code, put your sfz files, e.g. piano.sfz, in
-      // Assets/StreamingAssets/piano.sfz and use Application.streamingAssetsPath/piano.sfz instead.
-      // For downloaded assets, extract the files into Application.persistentDataPath first.
-      string path = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(Application.dataPath),
-                                                  AssetDatabase.GetAssetPath(InitialSfzFile)));
+      string path = GetObjectPath(InitialSfzFile);
 
       if (!Player.Sfizz.LoadFile(path)) {
         Debug.LogWarning($"Sfz not found at the given path: {path}, player will remain silent.");
       }
+    }
+
+    /// <summary>
+    /// Returns the absolute path of the given resource object.
+    ///
+    /// Note that this will NOT work outside the Unity editor, due to how Unity removes directory
+    /// structure of assets in builds, even if we are saving the path instead of getting it
+    /// dynamically with AssetDatabase. In your own code, put your sfz files, e.g. piano.sfz, in
+    /// Assets/StreamingAssets/piano.sfz and use Application.streamingAssetsPath/piano.sfz instead.
+    /// For downloaded assets, extract the files into Application.persistentDataPath first.
+    /// </summary>
+    private string GetObjectPath(Object @object) {
+#if UNITY_EDITOR
+      return Path.GetFullPath(Path.Combine(Path.GetDirectoryName(Application.dataPath),
+                                           AssetDatabase.GetAssetPath(@object)));
+#else
+      Debug.LogError("This example will only work in the editor! See file comments.");
+      return "";
 #endif
     }
 

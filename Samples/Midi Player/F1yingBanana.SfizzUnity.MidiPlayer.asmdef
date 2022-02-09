@@ -1,0 +1,16 @@
+{
+    "name": "F1yingBanana.SfizzUnity.MidiPlayer",
+    "rootNamespace": "",
+    "references": [
+        "GUID:32aa243366642c04c925e7f562b1555e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
