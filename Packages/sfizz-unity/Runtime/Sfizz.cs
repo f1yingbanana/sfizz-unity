@@ -309,9 +309,11 @@ namespace F1yingBanana.SfizzUnity {
     /// block.</param>
     public void RenderBlock(float[][] buffer, int numChannels, int numFrames) {
       Assert.IsTrue(initialized);
+      Assert.IsNotNull(buffer);
       Assert.IsTrue(buffer.Length == numChannels);
 
       for (int i = 0; i < numChannels; i++) {
+        Assert.IsNotNull(buffer[i]);
         Assert.IsTrue(buffer[i].Length >= blockSize);
       }
 
