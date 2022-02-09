@@ -30,6 +30,8 @@ An Asset Store package is in the works.
 ### <a name="getting-sfizz"></a> :microphone: Getting sfizz
 The [**sfizz**](https://github.com/sfztools/sfizz) library must be built on each of the Unity project's target platform. On Windows, we are looking for the **sfizz.dll** file. On iOS/macOS, we are looking for **sfizz.dylib**. On Linux, **sfizz.so**. Currently their releases on GitHub do not contain library files we need, so we can either build it ourselves (locally or cloning then using GitHub CI), or ask in their Discord channel (they are very nice and helpful :innocent:).
 
+See [this fork](https://github.com/f1yingbanana/sfizz/actions/runs/1810391665) for an example of building it on GitHub for Windows (x86 and x64).
+
 ### :accordion: Importing sfizz
 Once we obtained the library files, import them into Unity and set them up following [this guide](https://docs.unity3d.com/Manual/PluginInspector.html). **sfizz-unity** is a native plugin, by the way.
 
@@ -85,3 +87,9 @@ Use the [persistent data path](https://docs.unity3d.com/ScriptReference/Applicat
 ## :banjo: FAQs
 ### Can I use this on Android?
 No. You can try to build the source code for **Sfizz** with NDK in [this guide](https://kvurd.com/blog/compiling-a-cpp-library-for-android-with-android-studio/). StreamingAssets folder also doesn't work for Android, so you will need a system to extract the audio files to persistentDataPath instead.
+
+### I'm getting an `EntryPointNotFoundException`, what do I do?
+You likely have an incompatible sfizz library. Currently this wrapper requires a minimum version of Sfizz 1.2, and if your library is a lower version, you might get this exception. See [section](#getting-sfizz) to obtain the latest version.
+
+### I want to use a function in **sfizz.h**, but it's not in the wrapper
+This is likely because porting the function to C# is difficult. Almost all functions in the interface present in Sfizz 1.2 are in the wrapper, but if one that should be in the wrapper is missing, file a feature request.
