@@ -26,6 +26,11 @@
       "displayName": "Piano",
       "description": "A keyboard piano showcasing SfizzPlayer. Requires Unity.InputManager.",
       "path": "Samples~/Piano"
+    },
+    {
+      "displayName": "MIDI Player",
+      "description": "A MIDI player that converts a MIDI file to an AudioClip using SfizzMidiRenderer. Requires Unity.InputManager.",
+      "path": "Samples~/Midi Player"
     }
   ]
 }
